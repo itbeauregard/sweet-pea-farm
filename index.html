@@ -22,7 +22,7 @@
           <li><a href='#'>Flower Arrangements</a></li>
         </ul>
       </nav>
-      <button class='sign-in' name='Sign In'></button>
+      <button class='sign-in'>Sign In</button>
 
       // Pictures along left edge
       <div class='left-side'>
@@ -45,12 +45,21 @@
       <div class='flower-service'>
         <h1>Flower Arranging Services</h1>
         <div class='flower-content'></div>
-        <h2>Request a Quote</h2>
         <form class='flower-form'>
           <fieldset>
-            <legend>Quote Request Form</legend>
-            <input type='text' autocomplete='given-name'>First Name</input>
-            <input type='text' autocomplete='family-name'>Last Name</input>
+            <legend>Request a Quote</legend>
+            <input required type='text' autocomplete='given-name' placeholder='First Name'>
+            <input required type='text' autocomplete='family-name' placeholder='Last Name'>
+            <input required type='text' autocomplete='email' placeholder='Email Address'>
+            <input required type='text' autocomplete='tel' placeholder='Phone Number'>
+            <input required type='text' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
+            <input required type='date' placeholder='Date of Event'>
+            <p>Please use this area to answer the following questions:</p>
+            <ol>
+              <li>What kind of arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
+              <li>How many of each item do you need?</li>
+            </ol>
+            <textarea class='text-box' required>Write something here.</textarea>
           </fieldset>
         </form>
       </div>
