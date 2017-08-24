@@ -1,2 +1,35 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+.header {
+  height: 50px;
+}
+
+.logo {
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+
+.nav-bar,
+button {
+  float: right;
+}
+
+.nav-bar li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.left-side {
+  float: left;
+  width: 25%;
+  height: 300px;
+}
+
+.right-side {
+  float: right;
+  width: 75%;
+}
