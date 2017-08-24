@@ -19,10 +19,10 @@
         <ul>
           <li><a href='#'>Home</a></li>
           <li><a href='#'>CSA Shares</a></li>
-          <li><a href='#'>Flower Arrangements</a></li>
+          <li><a href='#'>Floral Design</a></li>
         </ul>
       </nav>
-      <button class='sign-in' name='Sign In'></button>
+      <button class='sign-in'>Sign In</button>
 
       // Pictures along left edge
       <div class='left-side'>
@@ -35,22 +35,69 @@
       // Headings and content
       <div class='right side'>
         <h2>About Sweet Pea Farm</h2>
-        <div class='about-content'></div>
+        <div class='about-content'>Some content about the farm.</div>
         <h2>Vegetables</h2>
-        <div class='vegetables-content'></div>
+        <div class='vegetables-content'>Some information about our vegetables.</div>
         <h2>Flowers</h2>
-        <div class='flowers-content'></div>
+        <div class='flowers-content'>Some words about our flowers.</div>
       </div>
 
-      <div class='flower-service'>
-        <h1>Flower Arranging Services</h1>
-        <div class='flower-content'></div>
-        <h2>Request a Quote</h2>
-        <form class='flower-form'>
+      // Floral Design page
+      <div class='floral-design-div'>
+        <h1>Floral Design</h1>
+        <div class='floral-content'>Some facts regarding our floral design services.</div>
+        <form class='floral-form'>
           <fieldset>
-            <legend>Quote Request Form</legend>
-            <input type='text' autocomplete='given-name'>First Name</input>
-            <input type='text' autocomplete='family-name'>Last Name</input>
+            <legend>Request a Quote</legend>
+            <input required type='text' autocomplete='given-name' placeholder='First Name'>
+            <input required type='text' autocomplete='family-name' placeholder='Last Name'>
+            <br>
+            <input required type='text' autocomplete='email' placeholder='Email Address'>
+            <input required type='text' autocomplete='tel' placeholder='Phone Number'>
+            <br>
+            <input required type='text' placeholder='Type of Event'>
+            <label>Date of Event:
+            <input required type='date'/></label>
+            <br>
+            <input required type='text' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
+            <p>Please use this area to answer the following questions:</p>
+            <ol>
+              <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
+              <li>How many of each item do you need?</li>
+            </ol>
+            <textarea class='text-box' required>Write something here.</textarea>
+            <br>
+            <button id='floral-quote' type='submit'>Submit Quote Request</button>
+          </fieldset>
+        </form>
+      </div>
+
+      // CSA Share Registration page
+      <div class='csa-share-div'>
+        <h1>CSA Shares</h1>
+        <div class='csa-content'>Some information about our CSA program.</div>
+        <form class='csa-form'>
+          <fieldset>
+            <legend>Register for a CSA Share</legend>
+            <input required type='text' autocomplete='given-name' placeholder='First Name'>
+            <input required type='text' autocomplete='family-name' placeholder='Last Name'>
+            <br>
+            <input required type='text' autocomplete='email' placeholder='Email Address'>
+            <input required type='text' autocomplete='tel' placeholder='Phone Number'>
+            <br>
+            <input required type='checkbox' id='veg-csa' name='csa' value='veg-csa'>
+            <label for='veg-csa'>15-week Vegetable CSA</label>
+            <input required type='checkbox' id='flower-csa' name='csa' value='flower-csa'>
+            <label for='flower-csa'>8-week Flower CSA</label>
+            <br>
+            <label>Choose a Pick-Up Location:
+            <input list='locations' name='pick-up-location' /></label>
+            <datalist id='locations'>
+              <option value='Phantom Farms in Cumberland, RI'>
+              <option value='118 Gano St in Providence, RI'>
+            </datalist>
+            <br>
+            <button id='csa-registration' type='submit'>Submit Registration</button>
           </fieldset>
         </form>
       </div>
