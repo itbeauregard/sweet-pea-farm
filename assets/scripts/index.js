@@ -17,4 +17,5 @@ require('./example')
 
 $(() => {
   // $('.floral-quote').on('submit', events.onSubmitQuote)
+  // $('#account-forms').hide()
 })

@@ -1,19 +1,33 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$thin-border: 1px solid #000;
+
+// div {
+//   border: $thin-border;
+// }
+
+img {
+  width: 100%;
+}
 
 .header {
   height: 50px;
+  padding: 15px;
 }
 
 .logo {
   float: left;
-  height: 100px;
-  width: 100px;
+  width: 35%;
 }
 
-.nav-bar,
-button {
+.nav-bar {
+  float: right;
+}
+
+.sign-in {
+  display: inline;
+  position: absolute;
   float: right;
 }
 
@@ -21,15 +35,18 @@ button {
   display: inline;
   list-style-type: none;
   padding-right: 20px;
+  font-size: 20px;
+  color: #000;
 }
 
 .left-side {
+  text-align: center;
   float: left;
-  height: 300px;
-  width: 25%;
+  width: 70%;
 }
 
 .right-side {
+  clear: both;
   float: right;
-  width: 75%;
+  width: 25%;
 }
