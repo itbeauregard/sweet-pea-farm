@@ -34,7 +34,9 @@ const createAccount = function (data) {
       'credentials': {
         'email': data.credentials.email,
         'password': data.credentials.password,
-        'password_confirmation': data.credentials.password
+        'password_confirmation': data.credentials.password,
+        'first_name': data.credentials.first_name,
+        'last_name': data.credentials.last_name
       }
     }
   })

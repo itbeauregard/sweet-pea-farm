@@ -15,8 +15,7 @@
 
       <!-- Header content -->
       <header class='header'>
-        <div class='logo'><img src='#' alt=''>LOGO</div>
-        <button class='sign-in'>Sign In</button>
+        <div class='logo'><img src='assets/styles/images/logo.jpg' alt='Sweet Pea Farm Logo'></div>
         <nav class='nav-bar'>
           <ul>
             <li><a href='#'>Home</a></li>
@@ -24,18 +23,66 @@
             <li><a href='#'>Floral Design</a></li>
           </ul>
         </nav>
+        <button class='sign-in'>Sign In</button>
       </header>
 
+      <div id='account-forms'>
+        <!-- Account error messages -->
+        <p class="error" id="password-error">Double check your old password.</p>
+        <p class="success" id="password-success">You successfully changed your password!</p>
+        <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
+        <p class="success" id="create-account-success">You successfully created an account!</p>
+        <p class="error" id="login-error">Wrong password or email.</p>
+
+        <!-- Account login -->
+        <form class="accounts" id='account-login'>
+          <h2>Login to your account</h2>
+          <div class='form-group'>
+            <input type="text" name="credentials[email]" placeholder="User Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+          </div>
+          <button type="submit" id='login' class='btn btn-default'>Login</button>
+        </form>
+
+        <!-- Create Account -->
+        <form class='accounts' id='create-account'>
+          <h2>Create a new account</h2>
+          <div class='form-group'>
+            <input required type='text' name='credentials[first_name]' placeholder='First Name'>
+            <input required type='text' name='credentials[last_name]' placeholder='Last Name'>
+            <br>
+            <input required type="text" name="credentials[email]" placeholder="an@example.email">
+            <input required type="password" name="credentials[password]" placeholder="Password">
+            <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          </div>
+          <button type="submit" id='create-button' class='btn btn-default'>CreateNew Account</button>
+        </form>
+
+        <!-- Change Password -->
+        <form class='accounts' id='change-password'>
+          <h2>Change your password</h2>
+          <div class='form-group'>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+          </div>
+          <button type="submit" id="change-button" name='submit' class='btnbtn-default'>Change Password</button>
+        </form>
+
+        <!-- Signout Account -->
+        <form class="accounts" id='account-signout'>
+          <button type="submit" id='signout' class='button btn-default'>Sign Out</button>
+        </form>
+      </div>
+
       <!-- Pictures along left edge -->
-      <div class='left-side'>
-        <img src='#' alt=''>
-        <img src='#' alt=''>
-        <img src='#' alt=''>
-        <img src='#' alt=''>
+      <div class='right-side'>
+        <img src='assets/styles/images/cactus_flower.JPG' alt='coral cactus zinnia'>
+        <img src='assets/styles/images/purple.JPG' alt='purple lisyanthus'>
+        <img src='assets/styles/images/yellow_zinnia_bee.JPG' alt='yellow zinnia with bee'>
       </div>
 
       <!-- Headings and content -->
-      <div class='right side'>
+      <div class='left-side'>
         <div class='home-page'>
           <h2>About Sweet Pea Farm</h2>
           <div class='about-content'>Some content about the farm.</div>
@@ -53,9 +100,9 @@
           <form class='floral-form'>
             <fieldset>
               <legend>Request a Quote</legend>
-              <input required type='text' autocomplete='given-name' placeholder='First Name'>
+              <!-- <input required type='text' autocomplete='given-name' placeholder='First Name'>
               <input required type='text' autocomplete='family-name' placeholder='Last Name'>
-              <br>
+              <br> -->
               <input required type='text' autocomplete='email' placeholder='Email Address'>
               <input required type='text' autocomplete='tel' placeholder='Phone Number'>
               <br>
@@ -83,9 +130,9 @@
           <form class='csa-form'>
             <fieldset>
               <legend>Register for a CSA Share</legend>
-              <input required type='text' autocomplete='given-name' placeholder='First Name'>
+              <!-- <input required type='text' autocomplete='given-name' placeholder='First Name'>
               <input required type='text' autocomplete='family-name' placeholder='Last Name'>
-              <br>
+              <br> -->
               <input required type='text' autocomplete='email' placeholder='Email Address'>
               <input required type='text' autocomplete='tel' placeholder='Phone Number'>
               <br>
@@ -106,5 +153,6 @@
           </form>
         </div>
       </div>
+
     </body>
 </html>
