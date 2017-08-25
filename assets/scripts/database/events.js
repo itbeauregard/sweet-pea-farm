@@ -26,6 +26,8 @@ const onCreateAccount = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   // Test that the passwords match
+  console.log('passing through events.js')
+  console.log(data)
   if (data.credentials.password !== data.credentials.password_confirmation) {
     ui.onCreateAccountError("passwords don't match")
   } else {
@@ -42,9 +44,19 @@ const onSignOut = function (event) {
     .catch(ui.onError)
 }
 
+const onCreateQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing quote request through events.js')
+  api.createQuoteRequest(data)
+    .then(ui.onCreateQuoteRequestSuccess)
+    .catch(ui.onCreateQuoteRequestError)
+}
+
 module.exports = {
   onLogin,
   onChangePassword,
   onCreateAccount,
-  onSignOut
+  onSignOut,
+  onCreateQuoteRequest
 }

@@ -27,6 +27,8 @@ const changePassword = function (data) {
 }
 
 const createAccount = function (data) {
+  console.log('passing through api.js')
+  console.log('app.host ' + app.host)
   return $.ajax({
     url: app.host + '/sign-up',
     method: 'POST',
@@ -52,9 +54,19 @@ const signOut = function () {
   })
 }
 
+const createQuoteRequest = function (data) {
+  console.log('passing quote request through api.js')
+  return $.ajax({
+    url: app.host + '/registrations',
+    method: 'POST',
+    data
+  })
+}
+
 module.exports = {
   loginAccount,
   changePassword,
   createAccount,
-  signOut
+  signOut,
+  createQuoteRequest
 }
