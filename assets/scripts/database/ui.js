@@ -38,6 +38,15 @@ const onSignOutError = function (response) {
   console.log(response)
 }
 
+const onCreateQuoteRequestSuccess = function (data) {
+  console.log('passing quote request through ui.js')
+  console.log(data)
+}
+
+const onCreateQuoteRequestError = function (response) {
+  console.log(response)
+}
+
 module.exports = {
   onLoginSuccess,
   onLoginError,
@@ -46,5 +55,7 @@ module.exports = {
   onCreateAccountSuccess,
   onCreateAccountError,
   onSignOutSuccess,
-  onSignOutError
+  onSignOutError,
+  onCreateQuoteRequestSuccess,
+  onCreateQuoteRequestError
 }

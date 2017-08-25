@@ -44,9 +44,19 @@ const onSignOut = function (event) {
     .catch(ui.onError)
 }
 
+const onCreateQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing quote request through events.js')
+  api.createQuoteRequest(data)
+    .then(ui.onCreateQuoteRequestSuccess)
+    .catch(ui.onCreateQuoteRequestError)
+}
+
 module.exports = {
   onLogin,
   onChangePassword,
   onCreateAccount,
-  onSignOut
+  onSignOut,
+  onCreateQuoteRequest
 }

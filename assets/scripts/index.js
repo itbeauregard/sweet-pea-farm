@@ -22,4 +22,6 @@ $(() => {
   $('#account-login').on('submit', events.onLogin)
   $('#change-password').on('submit', events.onChangePassword)
   $('#account-signout').on('submit', events.onSignOut)
+
+  $('#floral-form').on('submit', events.onCreateQuoteRequest)
 })
