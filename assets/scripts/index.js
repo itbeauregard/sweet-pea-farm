@@ -18,4 +18,8 @@ require('./example')
 $(() => {
   // $('.floral-quote').on('submit', events.onSubmitQuote)
   // $('#account-forms').hide()
+  $('#create-account').on('submit', events.onCreateAccount)
+  $('#account-login').on('submit', events.onLogin)
+  $('#change-password').on('submit', events.onChangePassword)
+  $('#account-signout').on('submit', events.onSignOut)
 })

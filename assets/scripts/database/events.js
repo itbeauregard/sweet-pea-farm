@@ -26,6 +26,8 @@ const onCreateAccount = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   // Test that the passwords match
+  console.log('passing through events.js')
+  console.log(data)
   if (data.credentials.password !== data.credentials.password_confirmation) {
     ui.onCreateAccountError("passwords don't match")
   } else {
