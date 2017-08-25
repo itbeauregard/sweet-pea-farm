@@ -7,7 +7,7 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
-const events = require('./database/event.js')
+const events = require('./database/events.js')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -16,5 +16,5 @@ const events = require('./database/event.js')
 require('./example')
 
 $(() => {
-  $('.floral-quote').on('submit', events.onSubmitQuote)
+  // $('.floral-quote').on('submit', events.onSubmitQuote)
 })

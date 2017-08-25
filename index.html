@@ -26,6 +26,49 @@
         </nav>
       </header>
 
+      <!-- Account error messages -->
+      <p class="error" id="password-error">Double check your old password.</p>
+      <p class="success" id="password-success">You successfully changed your password!</p>
+      <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
+      <p class="success" id="create-account-success">You successfully created an account!</p>
+      <p class="error" id="login-error">Wrong password or email.</p>
+
+      <!-- Account login -->
+      <form class="accounts" id='account-login'>
+        <h2>Login to your account</h2>
+        <div class='form-group'>
+          <input type="text" name="credentials[email]" placeholder="User Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+        </div>
+        <button type="submit" id='login' class='btn btn-default'>Login</button>
+      </form>
+
+      <!-- Create Account -->
+      <form class='accounts' id='create-account'>
+        <h2>Create a new account</h2>
+        <div class='form-group'>
+          <input type="text" name="credentials[email]"placeholder="an@example.email">
+          <input type="password" name="credentials[password]"placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]"placeholder="Confirm Password">
+        </div>
+        <button type="submit" id='create-button' class='btn btn-default'>CreateNew Account</button>
+      </form>
+
+      <!-- Signout Account -->
+      <form class="accounts" id='account-signout'>
+        <button type="submit" id='signout' class='button btn btn-default'>Sign Out</button>
+      </form>
+
+      <!-- Change Password -->
+      <form class='accounts' id='change-password'>
+        <h2>Change your password</h2>
+        <div class='form-group'>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+        </div>
+        <button type="submit" id="change-button" name='submit' class='btnbtn-default'>Change Password</button>
+      </form>
+
       <!-- Pictures along left edge -->
       <div class='left-side'>
         <img src='#' alt=''>
@@ -53,9 +96,9 @@
           <form class='floral-form'>
             <fieldset>
               <legend>Request a Quote</legend>
-              <input required type='text' autocomplete='given-name' placeholder='First Name'>
+              <!-- <input required type='text' autocomplete='given-name' placeholder='First Name'>
               <input required type='text' autocomplete='family-name' placeholder='Last Name'>
-              <br>
+              <br> -->
               <input required type='text' autocomplete='email' placeholder='Email Address'>
               <input required type='text' autocomplete='tel' placeholder='Phone Number'>
               <br>
@@ -83,9 +126,9 @@
           <form class='csa-form'>
             <fieldset>
               <legend>Register for a CSA Share</legend>
-              <input required type='text' autocomplete='given-name' placeholder='First Name'>
+              <!-- <input required type='text' autocomplete='given-name' placeholder='First Name'>
               <input required type='text' autocomplete='family-name' placeholder='Last Name'>
-              <br>
+              <br> -->
               <input required type='text' autocomplete='email' placeholder='Email Address'>
               <input required type='text' autocomplete='tel' placeholder='Phone Number'>
               <br>
@@ -106,5 +149,6 @@
           </form>
         </div>
       </div>
+
     </body>
 </html>
