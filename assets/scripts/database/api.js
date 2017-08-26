@@ -56,10 +56,22 @@ const signOut = function () {
 
 const createQuoteRequest = function (data) {
   console.log('passing quote request through api.js')
+  console.log(data)
+  console.log(app.user.id)
   return $.ajax({
-    url: app.host + '/registrations',
+    url: app.host + '/quote_requests',
     method: 'POST',
-    data
+    data: {
+      'fields': {
+        'email': data.fields.email,
+        'phone': data.fields.phone,
+        'event_type': data.fields.event_type,
+        'event_date': data.fields.event_date,
+        'color_scheme': data.fields.color_scheme,
+        'description': data.fields.description,
+        'user_id': app.user.id
+      }
+    }
   })
 }
 

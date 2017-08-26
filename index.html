@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Sweet Pea Farm</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -103,20 +103,20 @@
               <!-- <input required type='text' autocomplete='given-name' placeholder='First Name'>
               <input required type='text' autocomplete='family-name' placeholder='Last Name'>
               <br> -->
-              <input required type='text' autocomplete='email' placeholder='Email Address'>
-              <input required type='text' autocomplete='tel' placeholder='Phone Number'>
+              <input required type='text' name='fields[email]' autocomplete='email' placeholder='Email Address'>
+              <input required type='text' name='fields[phone]' autocomplete='tel' placeholder='Phone Number'>
               <br>
-              <input required type='text' placeholder='Type of Event'>
+              <input required type='text' name='fields[event_type]' placeholder='Type of Event'>
               <label>Date of Event:
-              <input required type='date'/></label>
+              <input required type='date' name='fields[event_date]'/></label>
               <br>
-              <input required type='text' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
+              <input required type='text' name='fields[color_scheme]' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
               <p>Please use this area to answer the following questions:</p>
               <ol>
                 <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
                 <li>How many of each item do you need?</li>
               </ol>
-              <textarea class='text-box' required>Write something here.</textarea>
+              <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
               <br>
               <button id='floral-quote' type='submit'>Submit Quote Request</button>
             </fieldset>
