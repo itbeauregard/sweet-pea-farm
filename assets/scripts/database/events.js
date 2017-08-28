@@ -53,10 +53,52 @@ const onCreateQuoteRequest = function (event) {
     .catch(ui.onCreateQuoteRequestError)
 }
 
+// TODO: find out if I need to pass data through this
+// TODO: how do I connect this to a specific quote request?
+const onDeleteQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing delete quote through events.js')
+  api.deleteQuoteRequest(data)
+    .then(ui.onDeleteQuoteRequestSuccess)
+    .catch(ui.onDeleteQuoteRequestError)
+}
+
+const onUpdateQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing Update QR events.js')
+  api.updateQuoteRequest(data)
+    .then(ui.onUpdateQuoteRequestSuccess)
+    .catch(ui.onUpdateQuoteRequestError)
+}
+
+const onGetQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing Get QR events.js')
+  api.getQuoteRequest(data)
+    .then(ui.onGetQuoteRequestSuccess)
+    .catch(ui.onGetQuoteRequestError)
+}
+
+const onGetAllQuoteRequests = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing GetAllQR events.js')
+  api.getAllQuoteRequests(data)
+    .then(ui.onGetAllQuoteRequestsSuccess)
+    .catch(ui.onGetAllQuoteRequestsError)
+}
+
 module.exports = {
   onLogin,
   onChangePassword,
   onCreateAccount,
   onSignOut,
-  onCreateQuoteRequest
+  onCreateQuoteRequest,
+  onDeleteQuoteRequest,
+  onUpdateQuoteRequest,
+  onGetQuoteRequest,
+  onGetAllQuoteRequests
 }

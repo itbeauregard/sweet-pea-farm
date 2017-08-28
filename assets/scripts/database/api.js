@@ -61,6 +61,9 @@ const createQuoteRequest = function (data) {
   return $.ajax({
     url: app.host + '/quote_requests',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
     data: {
       'fields': {
         'email': data.fields.email,
@@ -75,10 +78,73 @@ const createQuoteRequest = function (data) {
   })
 }
 
+// TODO: find out whether this is grabbing the item's id
+const deleteQuoteRequest = function (data) {
+  console.log('passing through delete quote request api.js')
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/quote_requests/' + data.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+// TODO: find out whether this is grabbing the item's id
+const updateQuoteRequest = function (data) {
+  console.log('passing through update quote request api.js')
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/quote_requests/' + data.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'fields': {
+        'email': data.fields.email,
+        'phone': data.fields.phone,
+        'event_type': data.fields.event_type,
+        'event_date': data.fields.event_date,
+        'color_scheme': data.fields.color_scheme,
+        'description': data.fields.description,
+        'user_id': app.user.id
+      }
+    }
+  })
+}
+
+const getQuoteRequest = function (data) {
+  console.log('passing through get QR api.js')
+  return $.ajax({
+    url: app.host + '/quote_requests/' + data.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const getAllQuoteRequests = function (data) {
+  console.log('passing through getAllQR api.js')
+  return $.ajax({
+    url: app.host + '/quote_requests',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   loginAccount,
   changePassword,
   createAccount,
   signOut,
-  createQuoteRequest
+  createQuoteRequest,
+  deleteQuoteRequest,
+  updateQuoteRequest,
+  getQuoteRequest,
+  getAllQuoteRequests
 }

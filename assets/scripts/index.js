@@ -24,4 +24,5 @@ $(() => {
   $('#account-signout').on('submit', events.onSignOut)
 
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
+  $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
 })

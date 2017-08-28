@@ -47,6 +47,38 @@ const onCreateQuoteRequestError = function (response) {
   console.log(response)
 }
 
+const onDeleteQuoteRequestSuccess = function (data) {
+  console.log('passing through delete QR in ui.js')
+}
+
+const onDeleteQuoteRequestError = function (response) {
+  console.log(response)
+}
+
+const onUpdateQuoteRequestSuccess = function (data) {
+  console.log('passing through update QR in ui.js')
+}
+
+const onUpdateQuoteRequestError = function (response) {
+  console.log(response)
+}
+
+const onGetQuoteRequestSuccess = function (data) {
+  console.log('passing through getQR in ui.js')
+}
+
+const onGetQuoteRequestError = function (response) {
+  console.log(response)
+}
+
+const onGetAllQuoteRequestsSuccess = function (data) {
+  console.log('passing through getAllQR in ui.js')
+}
+
+const onGetAllQuoteRequestsError = function (response) {
+  console.log(response)
+}
+
 module.exports = {
   onLoginSuccess,
   onLoginError,
@@ -57,5 +89,13 @@ module.exports = {
   onSignOutSuccess,
   onSignOutError,
   onCreateQuoteRequestSuccess,
-  onCreateQuoteRequestError
+  onCreateQuoteRequestError,
+  onDeleteQuoteRequestSuccess,
+  onDeleteQuoteRequestError,
+  onUpdateQuoteRequestSuccess,
+  onUpdateQuoteRequestError,
+  onGetQuoteRequestSuccess,
+  onGetQuoteRequestError,
+  onGetAllQuoteRequestsSuccess,
+  onGetAllQuoteRequestsError
 }
