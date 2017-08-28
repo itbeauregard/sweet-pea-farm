@@ -27,4 +27,6 @@ $(() => {
   $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
 
   $('#warning-messages').hide()
+
+  $('#account-forms').hide()
 })
