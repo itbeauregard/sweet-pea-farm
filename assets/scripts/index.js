@@ -25,4 +25,6 @@ $(() => {
 
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
   $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
+
+  $('#warning-messages').hide()
 })

@@ -7,14 +7,61 @@
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
 
+      <!-- BULMA style heading -->
+      <nav class="navbar ">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="./assets/styles/images/logo.jpg" alt="Sweet Pea Farm Logo" width="100" height="100">
+          </a>
+
+          <div class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-active" href="#">CSA Shares</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="#">CSA Share Registration</a>
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-active" href="#">Floral Design</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="#">Request a Quote for Floral Design</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="button is-primary" href="#">
+                  <span>Sign In</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </nav>
       <!-- Header content -->
-      <header class='header'>
+      <!-- <header class='header'>
         <div class='logo'><img src='assets/styles/images/logo.jpg' alt='Sweet Pea Farm Logo'></div>
         <nav class='nav-bar'>
           <ul>
@@ -24,15 +71,17 @@
           </ul>
         </nav>
         <button class='sign-in'>Sign In</button>
-      </header>
+      </header> -->
 
       <div id='account-forms'>
         <!-- Account error messages -->
-        <p class="error" id="password-error">Double check your old password.</p>
-        <p class="success" id="password-success">You successfully changed your password!</p>
-        <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
-        <p class="success" id="create-account-success">You successfully created an account!</p>
-        <p class="error" id="login-error">Wrong password or email.</p>
+        <div id='warning-messages'>
+          <p class="error" id="password-error">Double check your old password.</p>
+          <p class="success" id="password-success">You successfully changed your password!</p>
+          <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
+          <p class="success" id="create-account-success">You successfully created an account!</p>
+          <p class="error" id="login-error">Wrong password or email.</p>
+        </div>
 
         <!-- Account login -->
         <form class="accounts" id='account-login'>
@@ -55,8 +104,55 @@
             <input required type="password" name="credentials[password]" placeholder="Password">
             <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           </div>
-          <button type="submit" id='create-button' class='btn btn-default'>CreateNew Account</button>
+          <button type="submit" id='create-button' class='btn btn-default'>Create New Account</button>
         </form>
+
+        <!-- <form class='accounts' id='create-account'>
+          <h2>Create a new account</h2>
+          <div class="field">
+            <label class="label">First Name</label>
+            <div class='control'>
+              <input required class="input" type='text' name='credentials[first_name]' placeholder='First Name'>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Last Name</label>
+            <div class="control">
+              <input required class="input" type='text' name='credentials[last_name]' placeholder='Last Name'>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label is-black">Username</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input" type="text" name="credentials[username]" placeholder="Username">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" name="credentials[password]" placeholder="Password">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class='control'>
+            <button type="submit" id='create-button' class='button is-primary'>Create New Account</button>
+          </div>
+        </form> -->
 
         <!-- Change Password -->
         <form class='accounts' id='change-password'>
@@ -65,7 +161,7 @@
             <input type="password" name="passwords[old]" placeholder="Old Password">
             <input type="password" name="passwords[new]" placeholder="New Password">
           </div>
-          <button type="submit" id="change-button" name='submit' class='btnbtn-default'>Change Password</button>
+          <button type="submit" class='button is-black' id="change-button" name='submit' class='btnbtn-default'>Change Password</button>
         </form>
 
         <!-- Signout Account -->
