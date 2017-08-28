@@ -79,6 +79,46 @@ const onGetAllQuoteRequestsError = function (response) {
   console.log(response)
 }
 
+const onCreateRegistrationSuccess = function (data) {
+  console.log('passing through createReg in ui.js')
+}
+
+const onCreateRegistrationError = function (response) {
+  console.log(response)
+}
+
+const onDeleteRegistrationSuccess = function (data) {
+  console.log('passing through deleteReg in ui.js')
+}
+
+const onDeleteRegistrationError = function (response) {
+  console.log(response)
+}
+
+const onUpdateRegistrationSuccess = function (data) {
+  console.log('passing through updateReg in ui.js')
+}
+
+const onUpdateRegistrationError = function (response) {
+  console.log(response)
+}
+
+const onGetRegistrationSuccess = function (data) {
+  console.log('passing through getReg in ui.js')
+}
+
+const onGetRegistrationError = function (response) {
+  console.log(response)
+}
+
+const onGetAllRegistrationsSuccess = function (data) {
+  console.log('passing through getAllReg in ui.js')
+}
+
+const onGetAllRegistrationsError = function (response) {
+  console.log(response)
+}
+
 module.exports = {
   onLoginSuccess,
   onLoginError,
@@ -97,5 +137,15 @@ module.exports = {
   onGetQuoteRequestSuccess,
   onGetQuoteRequestError,
   onGetAllQuoteRequestsSuccess,
-  onGetAllQuoteRequestsError
+  onGetAllQuoteRequestsError,
+  onCreateRegistrationSuccess,
+  onCreateRegistrationError,
+  onDeleteRegistrationSuccess,
+  onDeleteRegistrationError,
+  onUpdateRegistrationSuccess,
+  onUpdateRegistrationError,
+  onGetRegistrationSuccess,
+  onGetRegistrationError,
+  onGetAllRegistrationsSuccess,
+  onGetAllRegistrationsError
 }

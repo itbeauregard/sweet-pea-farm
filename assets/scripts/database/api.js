@@ -137,6 +137,82 @@ const getAllQuoteRequests = function (data) {
   })
 }
 
+const createRegistration = function (data) {
+  console.log('passing through createReg api.js')
+  return $.ajax({
+    url: app.host + '/registrations',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'fields': {
+        'email': data.fields.email,
+        'phone': data.fields.phone,
+        'veg_csa': data.fields.veg_csa,
+        'flower_csa': data.fields.flower_csa,
+        'location': data.fields.location,
+        'user_id': data.fields.user_id
+      }
+    }
+  })
+}
+
+const deleteRegistration = function (data) {
+  console.log('passing through delete registration api.js')
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/registrations/' + data.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const updateRegistration = function (data) {
+  console.log('passing through updateReg api.js')
+  return $.ajax({
+    url: app.host + '/registrations/' + data.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'fields': {
+        'email': data.fields.email,
+        'phone': data.fields.phone,
+        'veg_csa': data.fields.veg_csa,
+        'flower_csa': data.fields.flower_csa,
+        'location': data.fields.location,
+        'user_id': data.fields.user_id
+      }
+    }
+  })
+}
+
+const getRegistration = function (data) {
+  console.log('passing through getReg api.js')
+  return $.ajax({
+    url: app.host + '/registrations/' + data.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const getAllRegistrations = function (data) {
+  console.log('passing through getAllReg api.js')
+  return $.ajax({
+    url: app.host + '/registrations',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   loginAccount,
   changePassword,
@@ -146,5 +222,10 @@ module.exports = {
   deleteQuoteRequest,
   updateQuoteRequest,
   getQuoteRequest,
-  getAllQuoteRequests
+  getAllQuoteRequests,
+  createRegistration,
+  deleteRegistration,
+  updateRegistration,
+  getRegistration,
+  getAllRegistrations
 }

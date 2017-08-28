@@ -91,6 +91,51 @@ const onGetAllQuoteRequests = function (event) {
     .catch(ui.onGetAllQuoteRequestsError)
 }
 
+const onCreateRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing through createReg through events.js')
+  api.createRegistration(data)
+    .then(ui.onCreateRegistrationSuccess)
+    .catch(ui.onCreateRegistrationError)
+}
+
+const onDeleteRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing through deleteReg through events.js')
+  api.deleteRegistration(data)
+    .then(ui.onDeleteRegistrationSuccess)
+    .catch(ui.onDeleteRegistrationError)
+}
+
+const onUpdateRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing through updateReg through events.js')
+  api.updateRegistration(data)
+    .then(ui.onUpdateRegistrationSuccess)
+    .catch(ui.onUpdateRegistrationError)
+}
+
+const onGetRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing GetReg events.js')
+  api.getRegistration(data)
+    .then(ui.onGetRegistrationSuccess)
+    .catch(ui.onGetRegistrationError)
+}
+
+const onGetAllRegistrations = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing GetAllReg events.js')
+  api.getAllRegistrations(data)
+    .then(ui.onGetAllRegistrationsSuccess)
+    .catch(ui.onGetAllRegistrationsError)
+}
+
 module.exports = {
   onLogin,
   onChangePassword,
@@ -100,5 +145,10 @@ module.exports = {
   onDeleteQuoteRequest,
   onUpdateQuoteRequest,
   onGetQuoteRequest,
-  onGetAllQuoteRequests
+  onGetAllQuoteRequests,
+  onCreateRegistration,
+  onDeleteRegistration,
+  onUpdateRegistration,
+  onGetRegistration,
+  onGetAllRegistrations
 }
