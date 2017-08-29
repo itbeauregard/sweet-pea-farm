@@ -23,8 +23,12 @@ $(() => {
   $('#account-signout').on('submit', events.onSignOut)
 
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
-  $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
   $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
+  $(document).on('click', '.delete-quote', events.onDeleteQuoteRequest)
+
+  $('.csa-form').on('submit', events.onCreateRegistration)
+
+  $('#get-all-registrations').on('click', events.onGetAllRegistrations)
 
   // Home page hiding
   $('#warning-messages').hide()
@@ -34,12 +38,55 @@ $(() => {
   $('#account-signout').hide()
   $('.floral-design-page').hide()
   $('.csa-share-page').hide()
-  $('#get-all-requests').hide()
+  $('#get-all-buttons').hide()
   $('#reveal-buttons').hide()
+  $('#account-signout').hide()
 
-  $('#sign-in-reveal').on('click', function () {
+  // Navigate to CSA registration page
+  $('#registration-nav').on('click', function () {
+    $('.csa-share-page').show()
     $('.text-content').hide()
+    $('#warning-messages').hide()
+    $('#account-login').hide()
+    $('#create-account').hide()
+    $('#change-password').hide()
+    $('#account-signout').hide()
+    $('.floral-design-page').hide()
+    $('#get-all-buttons').hide()
+    $('#reveal-buttons').hide()
+    $('#table-holder').empty()
+  })
+
+  // Navigate to floral design page
+  $('#floral-design-nav').on('click', function () {
+    $('.floral-design-page').show()
+    $('.text-content').hide()
+    $('#warning-messages').hide()
+    $('#account-login').hide()
+    $('#create-account').hide()
+    $('#change-password').hide()
+    $('#account-signout').hide()
+    $('.csa-share-page').hide()
+    $('#get-all-buttons').hide()
+    $('#reveal-buttons').hide()
+    $('#table-holder').empty()
+  })
+
+  // Navigate to Sign In page
+  $('#sign-in-reveal').on('click', function () {
     $('#account-login').show()
     $('#reveal-buttons').show()
+    $('#get-all-buttons').hide()
+    $('.text-content').hide()
+  })
+
+  // Navigate to Change Password page
+
+  // Navigate to Create Account page
+  $('#reveal-new-account').on('click', function () {
+    $('#create-account').show()
+    $('#account-login').hide()
+    $('#reveal-buttons').hide()
+    $('#sign-in-reveal').hide()
   })
 })

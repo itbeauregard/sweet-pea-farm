@@ -8,6 +8,9 @@ const onLoginSuccess = function (data) {
   console.log('Login Success!')
   console.log(data)
   ux.homePage()
+  $('#get-all-buttons').show()
+  $('#account-signout').show()
+  $('#sign-in-reveal').hide()
 }
 
 const onLoginError = function (response) {
@@ -26,6 +29,13 @@ const onChangePasswordError = function (response) {
 const onCreateAccountSuccess = function (data) {
   console.log('Create Account Success!')
   console.log(data)
+  $(() => {
+    $('#account-login').show()
+    $('#reveal-buttons').show()
+    $('#get-all-buttons').hide()
+    $('.text-content').hide()
+    $('#create-account').hide()
+  })
 }
 
 const onCreateAccountError = function (response) {
@@ -35,6 +45,9 @@ const onCreateAccountError = function (response) {
 const onSignOutSuccess = function () {
   console.log('Sign out successful!')
   app.user = null
+  ux.homePage()
+  $('#sign-in-reveal').show()
+  $('#account-signout').hide()
 }
 
 const onSignOutError = function (response) {
@@ -78,6 +91,9 @@ const onGetAllQuoteRequestsSuccess = function (data) {
   console.log('passing through getAllQR in ui.js')
   console.log(data)
   $(() => {
+    // Hide home page
+    $('.text-content').hide()
+    $('#get-all-requests').hide()
     // Grab the template script
     const theTemplateScript = $('#quote-request-template').html()
     // Compile the template
@@ -89,7 +105,7 @@ const onGetAllQuoteRequestsSuccess = function (data) {
     // Pass our data to the template
     const theCompiledHtml = theTemplate(context)
     // Add the compiled html to the page
-    $(document.body).append(theCompiledHtml)
+    $('#table-holder').prepend(theCompiledHtml)
   })
 }
 
@@ -99,6 +115,7 @@ const onGetAllQuoteRequestsError = function (response) {
 
 const onCreateRegistrationSuccess = function (data) {
   console.log('passing through createReg in ui.js')
+  ux.homePage()
 }
 
 const onCreateRegistrationError = function (response) {
@@ -131,6 +148,24 @@ const onGetRegistrationError = function (response) {
 
 const onGetAllRegistrationsSuccess = function (data) {
   console.log('passing through getAllReg in ui.js')
+  console.log(data)
+  $(() => {
+    // Hide home page
+    $('.text-content').hide()
+    $('#get-all-registrations').hide()
+    // Grab the template script
+    const theTemplateScript = $('#registration-template').html()
+    // Compile the template
+    const theTemplate = Handlebars.compile(theTemplateScript)
+    // Define our data object
+    const context = {
+      fields: data
+    }
+    // Pass our data to the template
+    const theCompiledHtml = theTemplate(context)
+    // Add the compiled html to the page
+    $('#table-holder').prepend(theCompiledHtml)
+  })
 }
 
 const onGetAllRegistrationsError = function (response) {

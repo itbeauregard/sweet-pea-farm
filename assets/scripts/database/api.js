@@ -80,11 +80,11 @@ const createQuoteRequest = function (data) {
 }
 
 // TODO: find out whether this is grabbing the item's id
-const deleteQuoteRequest = function (data) {
+const deleteQuoteRequest = function (id) {
   console.log('passing through delete quote request api.js')
-  console.log(data)
+  console.log(id)
   return $.ajax({
-    url: app.host + '/quote_requests/' + data.id,
+    url: app.host + '/quote_requests/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -140,6 +140,7 @@ const getAllQuoteRequests = function (data) {
 
 const createRegistration = function (data) {
   console.log('passing through createReg api.js')
+  console.log(app.user.id)
   return $.ajax({
     url: app.host + '/registrations',
     method: 'POST',
@@ -153,7 +154,7 @@ const createRegistration = function (data) {
         'veg_csa': data.fields.veg_csa,
         'flower_csa': data.fields.flower_csa,
         'location': data.fields.location,
-        'user_id': data.fields.user_id
+        'user_id': app.user.id
       }
     }
   })

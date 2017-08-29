@@ -60,10 +60,13 @@ const onCreateQuoteRequest = function (event) {
 // TODO: find out if I need to pass data through this
 // TODO: how do I connect this to a specific quote request?
 const onDeleteQuoteRequest = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
   console.log('passing delete quote through events.js')
-  api.deleteQuoteRequest(data)
+  event.preventDefault()
+  // Solution from issue queue:
+  // https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/issues/338
+  const id = $(this).data('id')
+  console.log('id is:' + id)
+  api.deleteQuoteRequest(id)
     .then(ui.onDeleteQuoteRequestSuccess)
     .catch(ui.onDeleteQuoteRequestError)
 }
@@ -99,6 +102,7 @@ const onCreateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('passing through createReg through events.js')
+  console.log(data)
   api.createRegistration(data)
     .then(ui.onCreateRegistrationSuccess)
     .catch(ui.onCreateRegistrationError)
