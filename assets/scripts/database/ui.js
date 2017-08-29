@@ -63,9 +63,9 @@ const onCreateQuoteRequestError = function (response) {
   console.log(response)
 }
 
-const onDeleteQuoteRequestSuccess = function (data) {
+const onDeleteQuoteRequestSuccess = function (id) {
   console.log('passing through delete QR in ui.js')
-  console.log(this)
+  $('.' + id).remove()
 }
 
 const onDeleteQuoteRequestError = function (response) {
