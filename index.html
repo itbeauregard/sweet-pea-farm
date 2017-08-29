@@ -6,6 +6,8 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <link rel="stylesheet" type="text/scss" href="./assets/styles/index.scss">
       <!-- Naughty links I added to use Bulma-->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
@@ -22,7 +24,7 @@
       <!-- BULMA style heading -->
       <nav class="navbar ">
         <div class="navbar-brand">
-          <a class="navbar-link home" href="#">Sweet Pea Farm</a>
+          <a class="navbar-link home" id='home-nav' href="#">Sweet Pea Farm</a>
 
           <!-- <div class="navbar-item is-hidden-desktop">
             <a class="button is-primary sign-in-reveal" href="#">
@@ -280,7 +282,7 @@
             </thead>
             <tbody id='append-here'>
             {{#each fields}}
-              <tr>
+              <tr class={{id}}>
                 <td>{{email}}</td>
                 <td>{{phone}}</td>
                 <td>{{event_type}}</td>
