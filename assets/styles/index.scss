@@ -1,28 +1,20 @@
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+// @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 $thin-border: 1px solid #000;
 
-// div {
-//   border: $thin-border;
-// }
-
-img {
-  width: 100%;
+body {
+  margin: 10px;
 }
 
-.header {
-  height: 50px;
-  padding: 15px;
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+
 }
 
-.logo {
-  float: left;
-  width: 35%;
-}
-
-.nav-bar {
-  float: right;
+.navbar-brand {
+  height: 100px;
 }
 
 .sign-in {
@@ -31,13 +23,6 @@ img {
   float: right;
 }
 
-.nav-bar li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
-  font-size: 20px;
-  color: #000;
-}
 
 .left-side {
   text-align: center;

@@ -53,10 +53,102 @@ const onCreateQuoteRequest = function (event) {
     .catch(ui.onCreateQuoteRequestError)
 }
 
+// TODO: find out if I need to pass data through this
+// TODO: how do I connect this to a specific quote request?
+const onDeleteQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing delete quote through events.js')
+  api.deleteQuoteRequest(data)
+    .then(ui.onDeleteQuoteRequestSuccess)
+    .catch(ui.onDeleteQuoteRequestError)
+}
+
+const onUpdateQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing Update QR events.js')
+  api.updateQuoteRequest(data)
+    .then(ui.onUpdateQuoteRequestSuccess)
+    .catch(ui.onUpdateQuoteRequestError)
+}
+
+const onGetQuoteRequest = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing Get QR events.js')
+  api.getQuoteRequest(data)
+    .then(ui.onGetQuoteRequestSuccess)
+    .catch(ui.onGetQuoteRequestError)
+}
+
+const onGetAllQuoteRequests = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing GetAllQR events.js')
+  api.getAllQuoteRequests(data)
+    .then(ui.onGetAllQuoteRequestsSuccess)
+    .catch(ui.onGetAllQuoteRequestsError)
+}
+
+const onCreateRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing through createReg through events.js')
+  api.createRegistration(data)
+    .then(ui.onCreateRegistrationSuccess)
+    .catch(ui.onCreateRegistrationError)
+}
+
+const onDeleteRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing through deleteReg through events.js')
+  api.deleteRegistration(data)
+    .then(ui.onDeleteRegistrationSuccess)
+    .catch(ui.onDeleteRegistrationError)
+}
+
+const onUpdateRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing through updateReg through events.js')
+  api.updateRegistration(data)
+    .then(ui.onUpdateRegistrationSuccess)
+    .catch(ui.onUpdateRegistrationError)
+}
+
+const onGetRegistration = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing GetReg events.js')
+  api.getRegistration(data)
+    .then(ui.onGetRegistrationSuccess)
+    .catch(ui.onGetRegistrationError)
+}
+
+const onGetAllRegistrations = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('passing GetAllReg events.js')
+  api.getAllRegistrations(data)
+    .then(ui.onGetAllRegistrationsSuccess)
+    .catch(ui.onGetAllRegistrationsError)
+}
+
 module.exports = {
   onLogin,
   onChangePassword,
   onCreateAccount,
   onSignOut,
-  onCreateQuoteRequest
+  onCreateQuoteRequest,
+  onDeleteQuoteRequest,
+  onUpdateQuoteRequest,
+  onGetQuoteRequest,
+  onGetAllQuoteRequests,
+  onCreateRegistration,
+  onDeleteRegistration,
+  onUpdateRegistration,
+  onGetRegistration,
+  onGetAllRegistrations
 }

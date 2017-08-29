@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Sweet Pea Farm</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Naughty links I added to use Bulma-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <!-- Naughty script tag that I added for Handlebars -->
+      <script src=https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js></script>
     </head>
     <body class="container-fluid">
 
+      <!-- BULMA style heading -->
+      <nav class="navbar ">
+        <div class="navbar-brand">
+          <a class="navbar-link" href="#">
+            <img src="./assets/styles/images/logo.jpg" alt="Sweet Pea Farm Logo" width="100" height="100">
+          </a>
+
+          <div class="navbar-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-active" href="#">CSA Shares</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="#">CSA Share Registration</a>
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link is-active" href="#">Floral Design</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="#">Request a Quote for Floral Design</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="button is-primary" href="#">
+                  <span>Sign In</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </nav>
       <!-- Header content -->
-      <header class='header'>
+      <!-- <header class='header'>
         <div class='logo'><img src='assets/styles/images/logo.jpg' alt='Sweet Pea Farm Logo'></div>
         <nav class='nav-bar'>
           <ul>
@@ -24,53 +73,92 @@
           </ul>
         </nav>
         <button class='sign-in'>Sign In</button>
-      </header>
+      </header> -->
 
       <div id='account-forms'>
         <!-- Account error messages -->
-        <p class="error" id="password-error">Double check your old password.</p>
-        <p class="success" id="password-success">You successfully changed your password!</p>
-        <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
-        <p class="success" id="create-account-success">You successfully created an account!</p>
-        <p class="error" id="login-error">Wrong password or email.</p>
+        <div id='warning-messages'>
+          <p class="error" id="password-error">Double check your old password.</p>
+          <p class="success" id="password-success">You successfully changed your password!</p>
+          <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
+          <p class="success" id="create-account-success">You successfully created an account!</p>
+          <p class="error" id="login-error">Wrong password or email.</p>
+        </div>
 
         <!-- Account login -->
+        <h1>Log in to your account</h1>
         <form class="accounts" id='account-login'>
-          <h2>Login to your account</h2>
-          <div class='form-group'>
-            <input type="text" name="credentials[email]" placeholder="User Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
+          <div class="form-group columns">
+            <div class="field column">
+              <div class='control'>
+                <input class="input is-large" type="text" name="credentials[email]" placeholder="User Email">
+              </div>
+            </div>
+            <div class="field column">
+              <div class="control">
+                <input class="input is-large" type="password" name="credentials[password]" placeholder="Password">
+              </div>
+            </div>
           </div>
-          <button type="submit" id='login' class='btn btn-default'>Login</button>
+          <button class="button is-primary" type="submit" id='login'>Login</button>
         </form>
 
         <!-- Create Account -->
+        <h1>Create a new account</h1>
         <form class='accounts' id='create-account'>
-          <h2>Create a new account</h2>
-          <div class='form-group'>
-            <input required type='text' name='credentials[first_name]' placeholder='First Name'>
-            <input required type='text' name='credentials[last_name]' placeholder='Last Name'>
-            <br>
-            <input required type="text" name="credentials[email]" placeholder="Username">
-            <input required type="password" name="credentials[password]" placeholder="Password">
-            <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <div class='form-group columns'>
+            <div class="field column">
+              <div class="control">
+                <input required class="input is-large" type='text' name='credentials[first_name]' placeholder='First Name'>
+              </div>
+            </div>
+            <div class="field column">
+              <div class="control">
+                <input required class="input is-large" type='text' name='credentials[last_name]' placeholder='Last Name'>
+              </div>
+            </div>
           </div>
-          <button type="submit" id='create-button' class='btn btn-default'>CreateNew Account</button>
+          <div class="columns">
+            <div class="field column">
+              <div class="control">
+                <input required class="input is-large" type="text" name="credentials[email]" placeholder="Username">
+              </div>
+            </div>
+            <div class="field column">
+              <div class="control">
+                <input required class="input is-large" type="password" name="credentials[password]" placeholder="Password">
+              </div>
+            </div>
+            <div class="field column">
+              <div class="control">
+                <input required class="input is-large" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class='button is-primary' id='create-button' >Create New Account</button>
         </form>
 
         <!-- Change Password -->
+        <h1>Change your password</h1>
         <form class='accounts' id='change-password'>
-          <h2>Change your password</h2>
-          <div class='form-group'>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
+          <div class='form-group columns'>
+            <div class='field column'>
+              <div class='control'>
+                <input required class="input is-large" type="password" name="passwords[old]" placeholder="Old Password">
+              </div>
+            </div>
+            <div class='field column'>
+              <div class='control'>
+                <input required class="input is-large" type="password" name="passwords[new]" placeholder="New Password">
+              </div>
+            </div>
           </div>
-          <button type="submit" id="change-button" name='submit' class='btnbtn-default'>Change Password</button>
+          <button type="submit" class='button is-black' id="change-button" name='submit'>Change Password</button>
         </form>
 
         <!-- Signout Account -->
         <form class="accounts" id='account-signout'>
-          <button type="submit" id='signout' class='button btn-default'>Sign Out</button>
+          <button type="submit" id='signout' class='button'>Sign Out</button>
         </form>
       </div>
 
@@ -103,22 +191,23 @@
               <!-- <input required type='text' autocomplete='given-name' placeholder='First Name'>
               <input required type='text' autocomplete='family-name' placeholder='Last Name'>
               <br> -->
-              <input required type='text' autocomplete='email' placeholder='Email Address'>
-              <input required type='text' autocomplete='tel' placeholder='Phone Number'>
+              <input required type='text' name='fields[email]' autocomplete='email' placeholder='Email Address'>
+              <input required type='text' name='fields[phone]' autocomplete='tel' placeholder='Phone Number'>
               <br>
-              <input required type='text' placeholder='Type of Event'>
+              <input required type='text' name='fields[event_type]' placeholder='Type of Event'>
               <label>Date of Event:
-              <input required type='date'/></label>
+              <input required type='date' name='fields[event_date]'/></label>
               <br>
-              <input required type='text' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
+              <input required type='text' name='fields[color_scheme]' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
               <p>Please use this area to answer the following questions:</p>
               <ol>
                 <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
                 <li>How many of each item do you need?</li>
               </ol>
-              <textarea class='text-box' required>Write something here.</textarea>
+              <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
               <br>
               <button id='floral-quote' type='submit'>Submit Quote Request</button>
+              <button id='delete-quote' type='submit'>Delete Quote Request</button>
             </fieldset>
           </form>
         </div>
@@ -152,7 +241,43 @@
             </fieldset>
           </form>
         </div>
+
+        <button id='get-all-requests' type='submit'>Get All Requests</button>
+
+
+
+        <!--This is our template. -->
+        <!--Data will be inserted in its according place, replacing the brackets.-->
+        <script id="quote-request-template" type="text/x-handlebars-template">
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Type of Event</th>
+                <th>Date of Event</th>
+                <th>Color Scheme</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody id='append-here'>
+            {{#each fields}}
+              <tr>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+                <td>{{event_type}}</td>
+                <td>{{event_date}}</td>
+                <td>{{color_scheme}}</td>
+                <td>{{description}}</td>
+                <td><a class="button is-dark" id={{id}}>Delete</a></td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </script>
+
       </div>
+
 
     </body>
 </html>

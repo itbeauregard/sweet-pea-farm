@@ -14,6 +14,7 @@ const events = require('./database/events.js')
 
 // use require without a reference to ensure a file is bundled
 require('./example')
+require('handlebars')
 
 $(() => {
   // $('.floral-quote').on('submit', events.onSubmitQuote)
@@ -24,4 +25,10 @@ $(() => {
   $('#account-signout').on('submit', events.onSignOut)
 
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
+  $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
+  $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
+
+  $('#warning-messages').hide()
+
+  // $('#account-forms').hide()
 })
