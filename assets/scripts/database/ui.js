@@ -73,6 +73,21 @@ const onGetQuoteRequestError = function (response) {
 
 const onGetAllQuoteRequestsSuccess = function (data) {
   console.log('passing through getAllQR in ui.js')
+  console.log(data)
+  $(() => {
+    // Grab the template script
+    const theTemplateScript = $('#quote-request-template').html()
+    // Compile the template
+    const theTemplate = Handlebars.compile(theTemplateScript)
+    // Define our data object
+    const context = {
+      fields: data
+    }
+    // Pass our data to the template
+    const theCompiledHtml = theTemplate(context)
+    // Add the compiled html to the page
+    $(document.body).append(theCompiledHtml)
+  })
 }
 
 const onGetAllQuoteRequestsError = function (response) {

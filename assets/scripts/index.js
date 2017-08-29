@@ -26,41 +26,9 @@ $(() => {
 
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
   $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
+  $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
 
   $('#warning-messages').hide()
 
-  $('#account-forms').hide()
-
-  // Grab the template script
-  const theTemplateScript = $('#quote-request-template').html()
-  console.log(theTemplateScript)
-  // Compile the template
-  const theTemplate = Handlebars.compile(theTemplateScript)
-
-  // Define our data object
-  const context = {
-    fields: [{
-        email: 'irene@beau.com',
-        phone: '4011230000',
-        event_type: 'wedding',
-        event_date: '01-02-2020',
-        color_scheme: 'purple',
-        description: 'Stuff n things'
-      },
-      {
-        email: 'irene@poop.com',
-        phone: '4011230000',
-        event_type: 'wedding',
-        event_date: '01-02-2020',
-        color_scheme: 'purple',
-        description: 'Stuff n things'
-      }
-    ]
-  }
-
-  // Pass our data to the template
-  const theCompiledHtml = theTemplate(context)
-
-  // Add the compiled html to the page
-  $(document.body).append(theCompiledHtml)
+  // $('#account-forms').hide()
 })
