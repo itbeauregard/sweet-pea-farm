@@ -29,6 +29,13 @@ const onChangePasswordError = function (response) {
 const onCreateAccountSuccess = function (data) {
   console.log('Create Account Success!')
   console.log(data)
+  $(() => {
+    $('#account-login').show()
+    $('#reveal-buttons').show()
+    $('#get-all-buttons').hide()
+    $('.text-content').hide()
+    $('#create-account').hide()
+  })
 }
 
 const onCreateAccountError = function (response) {
@@ -108,6 +115,7 @@ const onGetAllQuoteRequestsError = function (response) {
 
 const onCreateRegistrationSuccess = function (data) {
   console.log('passing through createReg in ui.js')
+  ux.homePage()
 }
 
 const onCreateRegistrationError = function (response) {

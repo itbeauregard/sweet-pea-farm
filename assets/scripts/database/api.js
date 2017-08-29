@@ -80,11 +80,11 @@ const createQuoteRequest = function (data) {
 }
 
 // TODO: find out whether this is grabbing the item's id
-const deleteQuoteRequest = function (data) {
+const deleteQuoteRequest = function (id) {
   console.log('passing through delete quote request api.js')
-  console.log(data)
+  console.log(id)
   return $.ajax({
-    url: app.host + '/quote_requests/' + data.id,
+    url: app.host + '/quote_requests/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
