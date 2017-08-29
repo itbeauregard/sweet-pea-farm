@@ -17,8 +17,6 @@ require('./example')
 require('handlebars')
 
 $(() => {
-  // $('.floral-quote').on('submit', events.onSubmitQuote)
-  // $('#account-forms').hide()
   $('#create-account').on('submit', events.onCreateAccount)
   $('#account-login').on('submit', events.onLogin)
   $('#change-password').on('submit', events.onChangePassword)
@@ -28,7 +26,20 @@ $(() => {
   $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
   $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
 
+  // Home page hiding
   $('#warning-messages').hide()
+  $('#account-login').hide()
+  $('#create-account').hide()
+  $('#change-password').hide()
+  $('#account-signout').hide()
+  $('.floral-design-page').hide()
+  $('.csa-share-page').hide()
+  $('#get-all-requests').hide()
+  $('#reveal-buttons').hide()
 
-  // $('#account-forms').hide()
+  $('#sign-in-reveal').on('click', function () {
+    $('.text-content').hide()
+    $('#account-login').show()
+    $('#reveal-buttons').show()
+  })
 })

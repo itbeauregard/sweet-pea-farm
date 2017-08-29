@@ -1,15 +1,18 @@
 'use strict'
 
 const app = require('../store.js')
+const ux = require('../ux.js')
 
 const onLoginSuccess = function (data) {
   app.user = data.user
   console.log('Login Success!')
   console.log(data)
+  ux.homePage()
 }
 
 const onLoginError = function (response) {
   console.log(response)
+  $('#login-error').show()
 }
 
 const onChangePasswordSuccess = function () {

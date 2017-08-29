@@ -3,8 +3,9 @@
 const app = require('../store.js')
 
 const loginAccount = function (data) {
+  console.log('data in api.js is: ' + data)
   return $.ajax({
-    url: app.host + '/sign-in/',
+    url: app.host + '/sign-in',
     method: 'POST',
     data: {
       'credentials': {

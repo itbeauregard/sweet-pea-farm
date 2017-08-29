@@ -7,6 +7,10 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const onLogin = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
+  console.log(data)
+  console.log('data.credentials.password is: ' + data.credentials.password)
+  console.log('data.credentials.email is: ' + data.credentials.email)
+
   api.loginAccount(data)
     .then(ui.onLoginSuccess)
     .catch(ui.onLoginError)
