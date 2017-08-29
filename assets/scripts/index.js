@@ -30,5 +30,8 @@ $(() => {
 
   $('#warning-messages').hide()
 
-  // $('#account-forms').hide()
+  $('.account-forms').hide()
+  $('.floral-design-page').hide()
+  $('.csa-share-page').hide()
+  $('#get-all-requests').hide()
 })

@@ -1,5 +1,9 @@
 // $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// @font-face {
+//   font-family: 'Diavlo Light';
+//   src: url('Diavlo_LIGHT_II_37.otf');
+// }
 
 $thin-border: 1px solid #000;
 
@@ -8,9 +12,33 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 20px;
 
+}
+
+// .home {
+//   @font-face {
+//     font-family: 'Diavlo Light';
+//     src: url('Diavlo_LIGHT_II_37.otf');
+//   }
+// }
+
+.big-pic {
+  width: 60%;
+}
+
+.home-page {
+  margin: 0 10%;
+}
+
+.account-forms {
+  margin: 0 10%;
+  text-align: center;
+}
+
+.text-content {
+  text-align: center;
 }
 
 .navbar-brand {
