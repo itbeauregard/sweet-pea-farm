@@ -8,6 +8,7 @@ const onLoginSuccess = function (data) {
   console.log('Login Success!')
   console.log(data)
   ux.homePage()
+  $('#get-all-requests').show()
 }
 
 const onLoginError = function (response) {
@@ -78,6 +79,9 @@ const onGetAllQuoteRequestsSuccess = function (data) {
   console.log('passing through getAllQR in ui.js')
   console.log(data)
   $(() => {
+    // Hide home page
+    $('.text-content').hide()
+    $('#get-all-requests').hide()
     // Grab the template script
     const theTemplateScript = $('#quote-request-template').html()
     // Compile the template
@@ -89,7 +93,7 @@ const onGetAllQuoteRequestsSuccess = function (data) {
     // Pass our data to the template
     const theCompiledHtml = theTemplate(context)
     // Add the compiled html to the page
-    $(document.body).append(theCompiledHtml)
+    $('#table-holder').prepend(theCompiledHtml)
   })
 }
 

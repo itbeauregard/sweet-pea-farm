@@ -10,6 +10,7 @@ const homePage = function () {
   $('.csa-share-page').hide()
   $('#get-all-requests').hide()
   $('#reveal-buttons').hide()
+  $('.text-content').show()
 }
 
 module.exports = {
