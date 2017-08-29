@@ -8,7 +8,7 @@ const homePage = function () {
   $('#account-signout').hide()
   $('.floral-design-page').hide()
   $('.csa-share-page').hide()
-  $('#get-all-requests').hide()
+  $('#get-all-buttons').hide()
   $('#reveal-buttons').hide()
   $('.text-content').show()
 }

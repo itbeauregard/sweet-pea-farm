@@ -140,6 +140,7 @@ const getAllQuoteRequests = function (data) {
 
 const createRegistration = function (data) {
   console.log('passing through createReg api.js')
+  console.log(app.user.id)
   return $.ajax({
     url: app.host + '/registrations',
     method: 'POST',
@@ -153,7 +154,7 @@ const createRegistration = function (data) {
         'veg_csa': data.fields.veg_csa,
         'flower_csa': data.fields.flower_csa,
         'location': data.fields.location,
-        'user_id': data.fields.user_id
+        'user_id': app.user.id
       }
     }
   })

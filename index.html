@@ -234,9 +234,9 @@
                   <input required class="input is-medium" type='text' autocomplete='tel' name='fields[phone]' placeholder='Phone Number'>
                 </div>
               </div>
-              <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='veg-csa'>
+              <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='yes'>
               <label for='veg-csa'>15-week Vegetable CSA</label>
-              <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='flower-csa'>
+              <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='yes'>
               <label for='flower-csa'>8-week Flower CSA</label>
               <br>
               <label class='label'>Choose a Pick-Up Location: </label>
@@ -258,13 +258,15 @@
           <option value='Phantom Farms in Cumberland, RI'>
           <option value='118 Gano St in Providence, RI'>
         </datalist> -->
-
-        <button id='get-all-requests' class='button is-primary' type='submit'>Get All Requests</button>
+        <div id='get-all-buttons'>
+          <button id='get-all-requests' class='button is-primary' type='submit'>Get All Quote Requests</button>
+          <button id='get-all-registrations' class='button is-primary' type='submit'>Get All Registrations</button>
+        </div>
 
         <div id='table-holder'>
         </div>
 
-        <!--This is our template. -->
+        <!--Quote Request Template -->
         <!--Data will be inserted in its according place, replacing the brackets.-->
         <script id="quote-request-template" type="text/x-handlebars-template">
           <table class='table'>
@@ -287,6 +289,33 @@
                 <td>{{event_date}}</td>
                 <td>{{color_scheme}}</td>
                 <td>{{description}}</td>
+                <td><a class="button is-dark" id={{id}}>Delete</a></td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </script>
+
+        <!-- CSA Registration Table Template -->
+        <script id="registration-template" type="text/x-handlebars-template">
+          <table class='table'>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Vegetable CSA</th>
+                <th>Flower CSA</th>
+                <th>Pick-Up Location</th>
+              </tr>
+            </thead>
+            <tbody id='append-here'>
+            {{#each fields}}
+              <tr>
+                <td>{{email}}</td>
+                <td>{{phone}}</td>
+                <td>{{veg_csa}}</td>
+                <td>{{flower_csa}}</td>
+                <td>{{location}}</td>
                 <td><a class="button is-dark" id={{id}}>Delete</a></td>
               </tr>
             {{/each}}

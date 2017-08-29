@@ -28,6 +28,8 @@ $(() => {
 
   $('.csa-form').on('submit', events.onCreateRegistration)
 
+  $('#get-all-registrations').on('click', events.onGetAllRegistrations)
+
   // Home page hiding
   $('#warning-messages').hide()
   $('#account-login').hide()
@@ -36,7 +38,7 @@ $(() => {
   $('#account-signout').hide()
   $('.floral-design-page').hide()
   $('.csa-share-page').hide()
-  $('#get-all-requests').hide()
+  $('#get-all-buttons').hide()
   $('#reveal-buttons').hide()
   $('#account-signout').hide()
 
@@ -49,7 +51,7 @@ $(() => {
     $('#change-password').hide()
     $('#account-signout').hide()
     $('.floral-design-page').hide()
-    $('#get-all-requests').hide()
+    $('#get-all-buttons').hide()
     $('#reveal-buttons').hide()
   })
 
@@ -62,7 +64,7 @@ $(() => {
     $('#change-password').hide()
     $('#account-signout').hide()
     $('.csa-share-page').hide()
-    $('#get-all-requests').hide()
+    $('#get-all-buttons').hide()
     $('#reveal-buttons').hide()
   })
 
@@ -70,5 +72,6 @@ $(() => {
     $('.text-content').hide()
     $('#account-login').show()
     $('#reveal-buttons').show()
+    $('#get-all-buttons').hide()
   })
 })

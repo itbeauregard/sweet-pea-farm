@@ -8,9 +8,9 @@ const onLoginSuccess = function (data) {
   console.log('Login Success!')
   console.log(data)
   ux.homePage()
-  $('#get-all-requests').show()
-  $('#sign-in-reveal').hide()
+  $('#get-all-buttons').show()
   $('#account-signout').show()
+  $('#sign-in-reveal').hide()
 }
 
 const onLoginError = function (response) {
@@ -140,6 +140,24 @@ const onGetRegistrationError = function (response) {
 
 const onGetAllRegistrationsSuccess = function (data) {
   console.log('passing through getAllReg in ui.js')
+  console.log(data)
+  $(() => {
+    // Hide home page
+    $('.text-content').hide()
+    $('#get-all-registrations').hide()
+    // Grab the template script
+    const theTemplateScript = $('#registration-template').html()
+    // Compile the template
+    const theTemplate = Handlebars.compile(theTemplateScript)
+    // Define our data object
+    const context = {
+      fields: data
+    }
+    // Pass our data to the template
+    const theCompiledHtml = theTemplate(context)
+    // Add the compiled html to the page
+    $('#table-holder').prepend(theCompiledHtml)
+  })
 }
 
 const onGetAllRegistrationsError = function (response) {
