@@ -52,7 +52,7 @@ $(() => {
     $('#reveal-buttons').hide()
   })
 
-  $('#sign-in-reveal').on('click', function () {
+  $('.sign-in-reveal').on('click', function () {
     $('.text-content').hide()
     $('#account-login').show()
     $('#reveal-buttons').show()
