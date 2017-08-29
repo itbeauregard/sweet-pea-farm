@@ -8,9 +8,12 @@ const onLoginSuccess = function (data) {
   console.log('Login Success!')
   console.log(data)
   ux.homePage()
-  $('#get-all-buttons').show()
-  $('#account-signout').show()
-  $('#sign-in-reveal').hide()
+  $(() => {
+    $('#get-all-buttons').show()
+    $('#account-signout').show()
+    $('#reveal-change-password').show()
+    $('#sign-in-reveal').hide()
+  })
 }
 
 const onLoginError = function (response) {
@@ -20,6 +23,9 @@ const onLoginError = function (response) {
 
 const onChangePasswordSuccess = function () {
   console.log('You successfully updated the account!')
+  ux.homePage()
+  $('#reveal-change-password').show()
+  $('#account-signout').show()
 }
 
 const onChangePasswordError = function (response) {

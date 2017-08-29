@@ -90,9 +90,19 @@ $(() => {
     $('#reveal-buttons').show()
     $('#get-all-buttons').hide()
     $('.text-content').hide()
+    $('#reveal-change-password').hide()
   })
 
   // Navigate to Change Password page
+  $('#reveal-change-password').on('click', function () {
+    $('#change-password').show()
+    $('#account-login').hide()
+    $('#reveal-buttons').hide()
+    $('#get-all-buttons').hide()
+    $('.text-content').hide()
+    $('.csa-share-page').hide()
+    $('.floral-design-page').hide()
+  })
 
   // Navigate to Create Account page
   $('#reveal-new-account').on('click', function () {
