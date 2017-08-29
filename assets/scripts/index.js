@@ -26,6 +26,8 @@ $(() => {
   $('#delete-quote').on('submit', events.onDeleteQuoteRequest)
   $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
 
+  $('.csa-form').on('submit', events.onCreateRegistration)
+
   // Home page hiding
   $('#warning-messages').hide()
   $('#account-login').hide()
@@ -36,6 +38,19 @@ $(() => {
   $('.csa-share-page').hide()
   $('#get-all-requests').hide()
   $('#reveal-buttons').hide()
+
+  $('#registration').on('click', function () {
+    $('.text-content').hide()
+    $('#warning-messages').hide()
+    $('#account-login').hide()
+    $('#create-account').hide()
+    $('#change-password').hide()
+    $('#account-signout').hide()
+    $('.floral-design-page').hide()
+    $('.csa-share-page').show()
+    $('#get-all-requests').hide()
+    $('#reveal-buttons').hide()
+  })
 
   $('#sign-in-reveal').on('click', function () {
     $('.text-content').hide()

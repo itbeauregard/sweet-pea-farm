@@ -36,7 +36,7 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link is-active" href="#">CSA Shares</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item" href="#">CSA Share Registration</a>
+                <a class="navbar-item" id="registration" href='#csa-share-page'>CSA Share Registration</a>
               </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
@@ -204,31 +204,57 @@
         </div>
 
      <!-- CSA Share Registration page -->
-        <div class='csa-share-page'>
+        <div class='csa-share-page' id='csa-share=page'>
           <h1>CSA Shares</h1>
-          <div class='csa-content'>Some information about our CSA program.</div>
+          <div class='csa-content'>
+            <h2>What is CSA?</h2>
+            <p>CSA stands for Community Supported Agriculture. It’s a vegetable subscription program that aims to strengthen the relationship between farmer and consumer. In return for an upfront investment made in the winter/early spring, CSA members receive a weekly “share” of the harvest during the growing season.</p>
+            <br>
+            <h2>Why join?</h2>
+            <p>Take the guesswork out of dinner—it’s an easy and convenient way to commit to healthy eating while enjoying the best of what the season has to offer. In addition to seasonal standbys, you’ll discover new favorites as you experience new vegetable varieties. Sweet Pea Farm strives to provide healthy produce at an affordable price to our local community. While the shares is an upfront investment, it offers more than just a replacement for supermarket vegetables. Your CSA vegetables will harvested just for you at their peak flavor and ripeness. As a shareholder, you will also receive a weekly email containing recipes relevant to your share that week.</p>
+            <br>
+            <h2>What will I receive in my vegetable share? Do I get to pick?</h2>
+            <p>You don’t get to pick what goes in your share because share contents are based upon what is ready to harvest each week. Take a look at the Rhode Island Harvest Calendar on Farm Fresh RI’s website for a comprehensive list of seasonal availability. Produce that Sweet Pea plans to grow for the 2017 season includes:  beets, summer squash, kale, arugula, radishes, peppers, eggplant, lettuce, basil, oregano, carrots, turnips, fennel, garlic, cabbage, kohlrabi, cucumbers, snap beans, collards, chard, potatoes, tomatoes, cauliflower, bok choi, broccoli, onions, brussel sprouts, winter squash, sweet potatoes, celery, and pea greens.</p>
+            <br>
+            <h2>How much food will I get?</h2>
+            <p>The Basic Vegetable Share is designed for an omnivorous family of four or one to two vegetarian diets and will generally include six to ten items per week. An example of an item is a 2lb. bag of potatoes or a pint of cherry tomatoes.</p>
+            <br>
+          </div>
           <form class='csa-form'>
             <fieldset>
               <legend>Register for a CSA Share</legend>
-              <input required type='text' autocomplete='email' placeholder='Email Address'>
-              <input required type='text' autocomplete='tel' placeholder='Phone Number'>
-              <br>
-              <input required type='checkbox' id='veg-csa' name='csa' value='veg-csa'>
+              <div class="columns">
+                <div class="column">
+                  <input required class="input is-medium" type='text' autocomplete='email' name='fields[email]' placeholder='Email Address'>
+                </div>
+                <div class="column">
+                  <input required class="input is-medium" type='text' autocomplete='tel' name='fields[phone]' placeholder='Phone Number'>
+                </div>
+              </div>
+              <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='veg-csa'>
               <label for='veg-csa'>15-week Vegetable CSA</label>
-              <input required type='checkbox' id='flower-csa' name='csa' value='flower-csa'>
+              <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='flower-csa'>
               <label for='flower-csa'>8-week Flower CSA</label>
               <br>
-              <label>Choose a Pick-Up Location:
-              <input list='locations' name='pick-up-location' /></label>
-              <datalist id='locations'>
-                <option value='Phantom Farms in Cumberland, RI'>
-                <option value='118 Gano St in Providence, RI'>
-              </datalist>
+              <label class='label'>Choose a Pick-Up Location: </label>
+              <div class='select'>
+                <select name='fields[location]'>
+                  <option>Phantom Farms in Cumberland, RI</option>
+                  <option>118 Gano St in Providence, RI</option>>
+                </select>
+              </div>
               <br>
-              <button id='csa-registration' type='submit'>Submit Registration</button>
+              <button id='csa-registration' class='button is-light' type='submit'>Submit Registration</button>
             </fieldset>
           </form>
         </div>
+
+        <!-- <label>Choose a Pick-Up Location:
+        <input list='locations' name='location'></label>
+        <datalist id='locations'>
+          <option value='Phantom Farms in Cumberland, RI'>
+          <option value='118 Gano St in Providence, RI'>
+        </datalist> -->
 
         <button id='get-all-requests' type='submit'>Get All Requests</button>
 

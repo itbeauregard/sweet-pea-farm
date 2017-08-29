@@ -99,6 +99,7 @@ const onCreateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('passing through createReg through events.js')
+  console.log(data)
   api.createRegistration(data)
     .then(ui.onCreateRegistrationSuccess)
     .catch(ui.onCreateRegistrationError)
