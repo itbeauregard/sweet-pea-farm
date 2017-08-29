@@ -13,24 +13,24 @@ body {
 }
 
 h1 {
-  font-size: 30px;
   margin-bottom: 20px;
-}
-
-h2 {
   font-weight: bold;
 }
 
 footer {
   margin-top: 50px;
 }
-
-input {
-  margin: 10px;
-}
+//
+// input {
+//   margin: 10px;
+// }
 
 ul {
   list-style: none;
+}
+
+.logo {
+  width: 60%;
 }
 
 .csa-form {
@@ -82,5 +82,4 @@ ul {
 
 .table {
   margin: auto;
-  border: $thin-border;
 }
