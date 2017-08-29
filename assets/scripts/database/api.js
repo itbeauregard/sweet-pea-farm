@@ -159,11 +159,11 @@ const createRegistration = function (data) {
   })
 }
 
-const deleteRegistration = function (data) {
+const deleteRegistration = function (id) {
   console.log('passing through delete registration api.js')
-  console.log(data)
+  console.log(id)
   return $.ajax({
-    url: app.host + '/registrations/' + data.id,
+    url: app.host + '/registrations/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
