@@ -104,7 +104,7 @@
               <input class="input is-medium" type="password" name="credentials[password]" placeholder="Password">
             </div>
           </div>
-          <button type="submit" id='login' class='button is-light'>Log In</button>
+          <button type="submit" id='login' class='button is-light is-large'>Log In</button>
         </form>
 
         <!-- Create Account -->
@@ -187,14 +187,28 @@
           <form id='floral-form'>
             <fieldset>
               <legend>Request a Quote</legend>
-              <input required type='text' name='fields[email]' autocomplete='email' placeholder='Email Address'>
-              <input required type='text' name='fields[phone]' autocomplete='tel' placeholder='Phone Number'>
+              <div class="columns">
+                <div class="column">
+                  <input required class="input is-medium" type='text' name='fields[email]' autocomplete='email' placeholder='Email Address'>
+                </div>
+                <div class="column">
+                  <input required class="input is-medium" type='text' name='fields[phone]' autocomplete='tel' placeholder='Phone Number'>
+                </div>
+              </div>
               <br>
-              <input required type='text' name='fields[event_type]' placeholder='Type of Event'>
+              <div class="columns">
+                <div class="column">
+                  <input required class="input is-medium" type='text' name='fields[event_type]' placeholder='Type of Event'>
+                </div>
+                <div class="column">
+                  <input required class="input is-medium" type='text' name='fields[color_scheme]' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
+                </div>
+              </div>
+              <br>
               <label>Date of Event:
-              <input required type='date' name='fields[event_date]'/></label>
+                <input required class="input is-medium" type='date' name='fields[event_date]'/>
+              </label>
               <br>
-              <input required type='text' name='fields[color_scheme]' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
               <p>Please use this area to answer the following questions:</p>
               <ul>
                 <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
@@ -202,7 +216,8 @@
               </ul>
               <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
               <br>
-              <button id='floral-quote' type='submit'>Submit Quote Request</button>
+              <button class="button is-primary is-large" id='floral-quote' type='submit'>Submit Quote Request</button>
+            </fieldset>
           </form>
         </div>
 
