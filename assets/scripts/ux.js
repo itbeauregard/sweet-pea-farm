@@ -9,7 +9,8 @@ const homePage = function () {
   $('.floral-design-page').hide()
   $('.csa-share-page').hide()
   $('#get-all-buttons').hide()
-  $('#reveal-buttons').hide()
+  $('#reveal-new-account').hide()
+  $('#reveal-change-password').hide()
   $('.text-content').show()
 }
 
