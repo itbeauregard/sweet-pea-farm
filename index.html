@@ -52,7 +52,7 @@
           <div class="navbar-item">
             <div class="field is-grouped">
               <p class="control">
-                <a class="button is-primary" href="#">
+                <a id="sign-in-reveal" class="button is-primary" href="#">
                   <span>Sign In</span>
                 </a>
               </p>
@@ -84,26 +84,22 @@
         </div>
 
         <!-- Account login -->
-        <h1>Log in to your account</h1>
         <form class="accounts" id='account-login'>
-          <div class="form-group columns">
-            <div class="field column">
-              <div class='control'>
-                <input class="input is-medium" type="text" name="credentials[email]" placeholder="User Email">
-              </div>
+          <h1>Sign in to your account</h1>
+          <div class='form-group columns'>
+            <div class='column'>
+              <input class="input is-medium" type="text" name="credentials[email]" placeholder="User Email">
             </div>
-            <div class="field column">
-              <div class="control">
-                <input class="input is-medium" type="password" name="credentials[password]" placeholder="Password">
-              </div>
+            <div class='column'>
+              <input class="input is-medium" type="password" name="credentials[password]" placeholder="Password">
             </div>
           </div>
-          <button class="button is-primary" type="submit" id='login'>Login</button>
+          <button type="submit" id='login' class='button is-light'>Log In</button>
         </form>
 
         <!-- Create Account -->
-        <h1>Create a new account</h1>
         <form class='accounts' id='create-account'>
+          <h1>Create a new account</h1>
           <div class='form-group columns'>
             <div class="field column">
               <div class="control">
@@ -137,8 +133,9 @@
         </form>
 
         <!-- Change Password -->
-        <h1>Change your password</h1>
+
         <form class='accounts' id='change-password'>
+          <h1>Change your password</h1>
           <div class='form-group columns'>
             <div class='field column'>
               <div class='control'>
@@ -159,16 +156,8 @@
           <button type="submit" id='signout' class='button'>Sign Out</button>
         </form>
 
-        <button type='submit' id='reveal-new-account' class='button is-light'>Sign up for new account</button>
-        <button type='submit' id='reveal-change-password' class='button is-light'>Change password</button>
       </div>
 
-      <!-- Pictures along left edge -->
-      <!-- <div class='right-side'>
-        <img src='assets/styles/images/cactus_flower.JPG' alt='coral cactus zinnia'>
-        <img src='assets/styles/images/purple.JPG' alt='purple lisyanthus'>
-        <img src='assets/styles/images/yellow_zinnia_bee.JPG' alt='yellow zinnia with bee'>
-      </div> -->
       <div class="text-content">
         <div>
           <img class="big-pic" src="assets/styles/images/logo.jpg" alt="sweet pea farm logo">
@@ -276,6 +265,17 @@
         </script>
 
       </div>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <div id='reveal-buttons'>
+              <button type='submit' id='reveal-new-account' class='button is-primary reveal'>Sign up for new account</button>
+              <button type='submit' id='reveal-change-password' class='button is-primary reveal'>Change password</button>
+            </div>
+          </div>
+        </div>
+      </footer>
 
 
     </body>
