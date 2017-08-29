@@ -42,24 +42,30 @@
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link is-active" href="#">CSA Shares</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item" id="registration" href='#csa-share-page'>CSA Share Registration</a>
+                <a class="navbar-item" id="registration-nav" href='#csa-share-page'>CSA Share Registration</a>
               </div>
             </div>
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link is-active" href="#">Floral Design</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item" href="#">Request a Quote for Floral Design</a>
+                <a class="navbar-item" id="floral-design-nav" href="#">Request a Quote for Floral Design</a>
               </div>
             </div>
           </div>
         </div>
 
         <div class="navbar-end">
+          <!-- Sign In Account -->
           <div class="navbar-item is-hidden-desktop-only">
-            <a class="button is-primary sign-in-reveal" href="#">
+            <a class="button is-primary" id='sign-in-reveal' href="#">
               <span>Sign In</span>
             </a>
           </div>
+
+          <!-- Signout Account -->
+          <form class="navbar-item is-hidden-desktop-only" id='account-signout'>
+            <button type="submit" id='signout' class='button is-dark'>Sign Out</button>
+          </form>
         </div>
       </nav>
       <!-- Header content -->
@@ -153,11 +159,6 @@
           <button type="submit" class='button is-black' id="change-button" name='submit'>Change Password</button>
         </form>
 
-        <!-- Signout Account -->
-        <form class="accounts" id='account-signout'>
-          <button type="submit" id='signout' class='button'>Sign Out</button>
-        </form>
-
       </div>
 
       <div class="text-content">
@@ -193,10 +194,10 @@
               <br>
               <input required type='text' name='fields[color_scheme]' placeholder='Color Scheme (e.g. Lavender, Coral, Golden)'>
               <p>Please use this area to answer the following questions:</p>
-              <ol>
+              <ul>
                 <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
                 <li>How many of each item do you need?</li>
-              </ol>
+              </ul>
               <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
               <br>
               <button id='floral-quote' type='submit'>Submit Quote Request</button>

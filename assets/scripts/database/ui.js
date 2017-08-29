@@ -9,6 +9,8 @@ const onLoginSuccess = function (data) {
   console.log(data)
   ux.homePage()
   $('#get-all-requests').show()
+  $('#sign-in-reveal').hide()
+  $('#account-signout').show()
 }
 
 const onLoginError = function (response) {
@@ -36,6 +38,9 @@ const onCreateAccountError = function (response) {
 const onSignOutSuccess = function () {
   console.log('Sign out successful!')
   app.user = null
+  ux.homePage()
+  $('#sign-in-reveal').show()
+  $('#account-signout').hide()
 }
 
 const onSignOutError = function (response) {

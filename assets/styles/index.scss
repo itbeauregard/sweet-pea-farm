@@ -29,6 +29,10 @@ input {
   margin: 10px;
 }
 
+ul {
+  list-style: none;
+}
+
 .csa-form {
   font-size: 20px;
 }
@@ -40,7 +44,8 @@ input {
 //   }
 // }
 
-.csa-share-page {
+.csa-share-page,
+.floral-design-page {
   margin: 0 10%;
 }
 
