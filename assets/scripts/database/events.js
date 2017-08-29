@@ -69,6 +69,10 @@ const onDeleteQuoteRequest = function (event) {
   api.deleteQuoteRequest(id)
     .then(ui.onDeleteQuoteRequestSuccess)
     .catch(ui.onDeleteQuoteRequestError)
+  $(() => {
+    $('#' + id).remove()
+  })
+  ui.drawQuoteRequestTable($(this).data)
 }
 
 const onUpdateQuoteRequest = function (event) {

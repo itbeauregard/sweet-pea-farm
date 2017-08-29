@@ -65,6 +65,7 @@ const onCreateQuoteRequestError = function (response) {
 
 const onDeleteQuoteRequestSuccess = function (data) {
   console.log('passing through delete QR in ui.js')
+  console.log(this)
 }
 
 const onDeleteQuoteRequestError = function (response) {
@@ -94,6 +95,12 @@ const onGetAllQuoteRequestsSuccess = function (data) {
     // Hide home page
     $('.text-content').hide()
     $('#get-all-requests').hide()
+  })
+  drawQuoteRequestTable(data)
+}
+
+const drawQuoteRequestTable = function (data) {
+  $(() => {
     // Grab the template script
     const theTemplateScript = $('#quote-request-template').html()
     // Compile the template
@@ -191,6 +198,7 @@ module.exports = {
   onGetQuoteRequestError,
   onGetAllQuoteRequestsSuccess,
   onGetAllQuoteRequestsError,
+  drawQuoteRequestTable,
   onCreateRegistrationSuccess,
   onCreateRegistrationError,
   onDeleteRegistrationSuccess,
