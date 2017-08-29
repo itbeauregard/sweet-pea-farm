@@ -135,8 +135,9 @@ const onCreateRegistrationError = function (response) {
   console.log(response)
 }
 
-const onDeleteRegistrationSuccess = function (data) {
+const onDeleteRegistrationSuccess = function (id) {
   console.log('passing through deleteReg in ui.js')
+  $('.' + id).remove()
 }
 
 const onDeleteRegistrationError = function (response) {

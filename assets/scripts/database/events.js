@@ -109,11 +109,11 @@ const onCreateRegistration = function (event) {
 }
 
 const onDeleteRegistration = function (event) {
-  event.preventDefault()
-  const data = getFormFields(this)
   console.log('passing through deleteReg through events.js')
-  api.deleteRegistration(data)
-    .then(ui.onDeleteRegistrationSuccess)
+  event.preventDefault()
+  const id = $(this).data('id')
+  api.deleteRegistration(id)
+    .then(ui.onDeleteRegistrationSuccess(id))
     .catch(ui.onDeleteRegistrationError)
 }
 

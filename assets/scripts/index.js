@@ -27,8 +27,8 @@ $(() => {
   $(document).on('click', '.delete-quote', events.onDeleteQuoteRequest)
 
   $('.csa-form').on('submit', events.onCreateRegistration)
-
   $('#get-all-registrations').on('click', events.onGetAllRegistrations)
+  $(document).on('click', '.delete-registration', events.onDeleteRegistration)
 
   // Home page hiding
   $('#warning-messages').hide()
