@@ -121,6 +121,7 @@ const onUpdateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('passing through updateReg through events.js')
+  console.log(data)
   api.updateRegistration(data)
     .then(ui.onUpdateRegistrationSuccess)
     .catch(ui.onUpdateRegistrationError)

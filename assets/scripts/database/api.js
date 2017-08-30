@@ -185,8 +185,7 @@ const updateRegistration = function (data) {
         'phone': data.fields.phone,
         'veg_csa': data.fields.veg_csa,
         'flower_csa': data.fields.flower_csa,
-        'location': data.fields.location,
-        'user_id': data.fields.user_id
+        'location': data.fields.location
       }
     }
   })

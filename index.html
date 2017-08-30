@@ -311,69 +311,104 @@
         <script id="registration-template" type="text/x-handlebars-template">
           <h1>CSA Registrations</h1>
           <br>
-          <table class='table'>
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Vegetable CSA</th>
-                <th>Flower CSA</th>
-                <th>Pick-Up Location</th>
-              </tr>
-            </thead>
-            <tbody id='append-here'>
-            {{#each fields}}
-              <tr class={{id}}>
-                <td>{{id}}</td>
-                <td>{{email}}</td>
-                <td>{{phone}}</td>
-                <td>{{veg_csa}}</td>
-                <td>{{flower_csa}}</td>
-                <td>{{location}}</td>
-                <td><a class="button is-dark delete-registration" data-id={{id}}>Delete</a></td>
-              </tr>
-            {{/each}}
-            </tbody>
-            <tfoot>
-              <tr class='row-form'>
-                <td><input type='number' name='fields[id]' placeholder='ID'></td>
-                <td><input type='number' name='fields[email]' placeholder='Email'></td>
-                <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
-                <td>
-                  <label>Veg CSA?</label>
-                  <div class='select'>
-                    <select name='fields[veg_csa]'>
-                      <option>Yes</option>
-                      <option>No</option>>
-                    </select>
-                  </div>
-                </td>
-                <td>
-                  <label>Flower CSA?</label>
-                  <div class='select'>
-                    <select name='fields[flower_csa]'>
-                      <option>Yes</option>
-                      <option>No</option>>
-                    </select>
-                  </div>
-                </td>
-                <td>
-                  <label>Choose a Pick-Up Location: </label>
-                  <div class='select'>
-                    <select name='fields[location]'>
-                      <option>Phantom Farms in Cumberland, RI</option>
-                      <option>118 Gano St in Providence, RI</option>>
-                    </select>
-                  </div>
-                </td>
-                <td>
-                  <a class="button is-light" id="update-registration">Update</a>
-                </td>
-          </table>
+          <form id='update-registration'>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Vegetable CSA</th>
+                  <th>Flower CSA</th>
+                  <th>Pick-Up Location</th>
+                </tr>
+              </thead>
+              <tbody id='append-here'>
+              {{#each fields}}
+                <tr class={{id}}>
+                  <td>{{id}}</td>
+                  <td>{{email}}</td>
+                  <td>{{phone}}</td>
+                  <td>{{veg_csa}}</td>
+                  <td>{{flower_csa}}</td>
+                  <td>{{location}}</td>
+                  <td><a class="button is-dark delete-registration" data-id={{id}}>Delete</a></td>
+                </tr>
+              {{/each}}
+              </tbody>
+              <tfoot>
+                <tr class='row-form'>
+                  <td><input type='number' name='fields[id]' placeholder='ID'></td>
+                  <td><input type='text' name='fields[email]' placeholder='Email'></td>
+                  <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
+                  <td>
+                    <label>Veg CSA?</label>
+                    <div class='select'>
+                      <select name='fields[veg_csa]'>
+                        <option>Yes</option>
+                        <option>No</option>>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <label>Flower CSA?</label>
+                    <div class='select'>
+                      <select name='fields[flower_csa]'>
+                        <option>Yes</option>
+                        <option>No</option>>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <label>Choose a Pick-Up Location: </label>
+                    <div class='select'>
+                      <select name='fields[location]'>
+                        <option>Phantom Farms in Cumberland, RI</option>
+                        <option>118 Gano St in Providence, RI</option>>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <button type='submit' class="button is-light" id="update-registration-button">Update</button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </form>
         </script>
+        <!-- <form id='update-registration'>
+          <input type='number' name='fields[id]' placeholder='ID'>
+          <input type='text' name='fields[email]' placeholder='Email'>
+          <input type='text' name='fields[phone]' placeholder='Phone'>
 
-      </div>
+          <label>Veg CSA?</label>
+          <div class='select'>
+            <select name='fields[veg_csa]'>
+              <option>Yes</option>
+              <option>No</option>>
+            </select>
+          </div>
+
+          <label>Flower CSA?</label>
+          <div class='select'>
+            <select name='fields[flower_csa]'>
+              <option>Yes</option>
+              <option>No</option>>
+            </select>
+          </div>
+
+          <label>Choose a Pick-Up Location: </label>
+          <div class='select'>
+            <select name='fields[location]'>
+              <option>Phantom Farms in Cumberland, RI</option>
+              <option>118 Gano St in Providence, RI</option>>
+            </select>
+          </div>
+
+          <button type='submit' class="button is-light" id="update-reg-button">Update</button>
+      </form> -->
+
+
 
       <footer class="footer">
         <div class="container">
