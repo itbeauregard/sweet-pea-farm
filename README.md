@@ -24,7 +24,7 @@ Some user stories I developed were:
 
 The process started with [some](http://imgur.com/bzJJ41v) [very](http://imgur.com/9WHSpJV) [rough](http://imgur.com/i6CpDsH) [wireframes](http://imgur.com/2bTdEHE). I'd like to work on my wireframing skills.
 
-This project required much more design than the last game project. Most of my coding was a matter of managing what the user could do through jQuery. The data tables were pretty straightforward. I used Handlebars to render them with templates. Using the Bulma framework really helped with formatting the forms and tables. It's hard to say whether the time it took me to learn Bulma was worth the convenience. I had a wee meltdown when I realized that commenting out the Bootstrap import statements meant I couldn't deploy my page. I ran into trouble because Bootstrap was taking precedence over Bulma somehow. But ironed out the issues.
+This project required much more design than the last game project. Most of my coding was a matter of managing what the user could do through jQuery. The data tables were pretty straightforward. I used Handlebars to render them with templates. Using the Bulma framework really helped with formatting the forms and tables. It's hard to say whether the time it took me to learn Bulma was worth the convenience. I had a wee meltdown when I realized that commenting out the Bootstrap import statements meant I couldn't deploy my page. I ran into trouble because Bootstrap was taking precedence over Bulma somehow. I ironed out the issues, but I had to re-do much of my formatting, hence the odd proportions in some places.
 
 I referred to my tic-tac-toe application a lot through this project when I needed to understand things like how the events.js, api.js, and ui.js all fit together. It was much easier this time around because I knew what worked.
 
@@ -33,6 +33,6 @@ I referred to my tic-tac-toe application a lot through this project when I neede
 
 1. Authentication & Authorization: I do not have any feature that distinguishes between a customer and a business owner. I was intending to make some hacky move like having an unsecure string password, but instead opted to focus on making the page more navigable.
 
-2. Design & Content: I'd like to add more of the content I have lying around in a Wix page that we were going to launch last year. I'd like to make it more of a useful customer experience with pictures and a FAQs view.
+2. Design & Content: I'd like to add more of the content I have lying around in a Wix page that we were going to launch last year. I'd like to make it more of a useful customer experience with pictures and a FAQs view. Bulma is an awesome framework and I really like its style. Because of the Bootstrap mishap, I had to forgo some of my original formatting. I'd like to spend a couple hours fussing over that--several elements look oddly placed. 
 
 3. Smartphone compatibility: I didn't test for smartphones as much, though I think using Bulma helped to make my app more flexible. I'd like to test those views because I know potential employers do a lot of scoping from their phones now. 
