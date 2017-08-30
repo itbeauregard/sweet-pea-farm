@@ -25,6 +25,7 @@ $(() => {
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
   $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
   $(document).on('click', '.delete-quote', events.onDeleteQuoteRequest)
+  $(document).on('submit', '#update-quote-form', events.onUpdateQuoteRequest)
 
   $('.csa-form').on('submit', events.onCreateRegistration)
   $('#get-all-registrations').on('click', events.onGetAllRegistrations)

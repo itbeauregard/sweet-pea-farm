@@ -96,7 +96,7 @@ const updateQuoteRequest = function (data) {
   console.log('passing through update quote request api.js')
   console.log(data)
   return $.ajax({
-    url: app.host + '/quote_requests/' + data.id,
+    url: app.host + '/quote_requests/' + data.fields.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token

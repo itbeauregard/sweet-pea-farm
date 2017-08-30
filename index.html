@@ -280,7 +280,9 @@
         <!--Quote Request Template -->
         <!--Data will be inserted in its according place, replacing the brackets.-->
         <script id="quote-request-template" type="text/x-handlebars-template">
-          <form id='quote-form'>
+          <h1>Floral Design Quote Requests</h1>
+          <br>
+          <form id='update-quote-form'>
             <table class='table'>
               <thead>
                 <tr>
@@ -293,7 +295,7 @@
                   <th>Description</th>
                 </tr>
               </thead>
-              <tbody id='append-here'>
+              <tbody id='append-quote-here'>
               {{#each fields}}
                 <tr class={{id}}>
                   <td>{{id}}</td>
@@ -345,7 +347,7 @@
                   <th>Pick-Up Location</th>
                 </tr>
               </thead>
-              <tbody id='append-here'>
+              <tbody id='append-reg-here'>
               {{#each fields}}
                 <tr class={{id}}>
                   <td>{{id}}</td>

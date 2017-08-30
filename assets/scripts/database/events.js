@@ -76,7 +76,7 @@ const onUpdateQuoteRequest = function (event) {
   const data = getFormFields(this)
   console.log('passing Update QR events.js')
   api.updateQuoteRequest(data)
-    .then(ui.onUpdateQuoteRequestSuccess)
+    .then(ui.onUpdateQuoteRequestSuccess(data))
     .catch(ui.onUpdateQuoteRequestError)
 }
 
