@@ -38,7 +38,6 @@ const onChangePasswordSuccess = function () {
     $('.text-content').show()
 
     $('#change-password').hide()
-    $('#table-holder').empty()
   })
 }
 
