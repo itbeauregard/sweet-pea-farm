@@ -190,16 +190,20 @@
                 </div>
               </div>
               <br>
-              <label>Date of Event:
-                <input required class="input is-medium" type='date' name='fields[event_date]'/>
-              </label>
-              <br>
-              <p>Please use this area to answer the following questions:</p>
-              <ul>
-                <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
-                <li>How many of each item do you need?</li>
-              </ul>
-              <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
+              <div class="columns">
+                <div class="column">
+                  <label>Date of Event:
+                    <input required class="input is-medium" type='date' name='fields[event_date]'/>
+                  </label>
+                </div>
+                <div class="column">
+                  <ul>
+                    <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
+                    <li>How many of each item do you need?</li>
+                  </ul>
+                  <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
+                </div>
+              </div>
               <br>
               <button class="button is-primary is-large" id='floral-quote' type='submit'>Submit Quote Request</button>
             </fieldset>
@@ -228,16 +232,19 @@
               <legend>Register for a CSA Share</legend>
               <div class="columns">
                 <div class="column">
-                  <input required class="input is-medium" type='text' autocomplete='email' name='fields[email]' placeholder='Email Address'>
+                  <input required class="input is-large" type='text' autocomplete='email' name='fields[email]' placeholder='Email Address'>
                 </div>
                 <div class="column">
-                  <input required class="input is-medium" type='text' autocomplete='tel' name='fields[phone]' placeholder='Phone Number'>
+                  <input required class="input is-large" type='text' autocomplete='tel' name='fields[phone]' placeholder='Phone Number'>
                 </div>
               </div>
-              <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='yes'>
-              <label for='veg-csa'>15-week Vegetable CSA</label>
-              <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='yes'>
-              <label for='flower-csa'>8-week Flower CSA</label>
+              <label for='veg-csa'>15-week Vegetable CSA
+                <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='yes'>
+              </label>
+              <label for='flower-csa'>8-week Flower CSA
+                <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='yes'>
+              </label>
+              <br>
               <br>
               <label>Choose a Pick-Up Location: </label>
               <div class='select'>
@@ -247,7 +254,8 @@
                 </select>
               </div>
               <br>
-              <button id='csa-registration' class='button is-light is-medium' type='submit'>Submit Registration</button>
+              <br>
+              <button id='csa-registration' class='button is-light is-large' type='submit'>Submit Registration</button>
             </fieldset>
           </form>
         </div>
