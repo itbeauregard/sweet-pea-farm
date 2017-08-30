@@ -26,12 +26,6 @@
         <div class="navbar-brand">
           <a class="navbar-link home" id='home-nav' href="#">Sweet Pea Farm</a>
 
-          <!-- <div class="navbar-item is-hidden-desktop">
-            <a class="button is-primary sign-in-reveal" href="#">
-              <span>Sign In</span>
-            </a>
-          </div> -->
-
           <div class="navbar-burger burger" data-target="navMenu">
             <span></span>
             <span></span>
@@ -66,22 +60,11 @@
 
           <!-- Signout Account -->
           <form class="navbar-item is-hidden-desktop-only" id='account-signout'>
-            <button type="submit" id='signout' class='button is-dark'>Sign Out</button>
+            <button type="submit" id='signout' class='button is-dark is-large'>Sign Out</button>
           </form>
         </div>
       </nav>
-      <!-- Header content -->
-      <!-- <header class='header'>
-        <div class='logo'><img src='assets/styles/images/logo.jpg' alt='Sweet Pea Farm Logo'></div>
-        <nav class='nav-bar'>
-          <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#'>CSA Shares</a></li>
-            <li><a href='#'>Floral Design</a></li>
-          </ul>
-        </nav>
-        <button class='sign-in'>Sign In</button>
-      </header> -->
+
 
       <div class='account-forms'>
         <!-- Account error messages -->
@@ -93,21 +76,23 @@
           <p class="error" id="login-error">Wrong password or email.</p>
         </div>
 
-        <!-- Account login -->
+        <!-- Account login Form-->
         <form class="accounts" id='account-login'>
           <h1>Sign in to your account</h1>
+          <br>
           <div class='form-group columns'>
             <div class='column'>
-              <input class="input is-medium" type="text" name="credentials[email]" placeholder="User Email">
+              <input class="input is-large" type="text" name="credentials[email]" placeholder="User Email">
             </div>
             <div class='column'>
-              <input class="input is-medium" type="password" name="credentials[password]" placeholder="Password">
+              <input class="input is-large" type="password" name="credentials[password]" placeholder="Password">
             </div>
           </div>
+          <br>
           <button type="submit" id='login' class='button is-light is-large'>Log In</button>
         </form>
 
-        <!-- Create Account -->
+        <!-- Create Account Form-->
         <form class='accounts' id='create-account'>
           <h1>Create a new account</h1>
           <div class='form-group columns'>
@@ -142,23 +127,24 @@
           <button type="submit" class='button is-primary' id='create-button' >Create New Account</button>
         </form>
 
-        <!-- Change Password -->
-
+        <!-- Change Password Form-->
         <form class='accounts' id='change-password'>
           <h1>Change your password</h1>
+          <br>
           <div class='form-group columns'>
             <div class='field column'>
               <div class='control'>
-                <input required class="input is-medium" type="password" name="passwords[old]" placeholder="Old Password">
+                <input required class="input is-large" type="password" name="passwords[old]" placeholder="Old Password">
               </div>
             </div>
             <div class='field column'>
               <div class='control'>
-                <input required class="input is-medium" type="password" name="passwords[new]" placeholder="New Password">
+                <input required class="input is-large" type="password" name="passwords[new]" placeholder="New Password">
               </div>
             </div>
           </div>
-          <button type="submit" class='button is-black' id="change-button" name='submit'>Change Password</button>
+          <br>
+          <button type="submit" class='button is-black is-large' id="change-button" name='submit'>Change Password</button>
         </form>
 
       </div>
@@ -168,8 +154,7 @@
           <img class="logo" src="http://i.imgur.com/3SsRjwM.jpg" alt='Sweet Pea Farm Logo'>
         </div>
 
-        <!-- Headings and content -->
-        <!-- <div class='left-side'> -->
+        <!-- Home page content -->
           <div class='home-page'>
             <h1>About Sweet Pea Farm</h1>
             <div class='growing-methods-content'>We are committed to growing healthy food that is also good for our planet. We practice sustainable soil management and our growing practices are in line with USDA Certified Organic standards or higher. In addition, Sweet Pea Farm is in the process of applying for GAP Certification, a voluntary audit program to ensure that vegetables and fruit are produced, packed, handled, and stored as safely as possible. You will be impressed by the beauty and cleanliness of our farm-fresh produce.</div>
@@ -266,13 +251,6 @@
             </fieldset>
           </form>
         </div>
-
-        <!-- <label>Choose a Pick-Up Location:
-        <input list='locations' name='location'></label>
-        <datalist id='locations'>
-          <option value='Phantom Farms in Cumberland, RI'>
-          <option value='118 Gano St in Providence, RI'>
-        </datalist> -->
 
         <div id='table-holder'>
         </div>
@@ -400,38 +378,6 @@
             </table>
           </form>
         </script>
-        <!-- <form id='update-registration'>
-          <input type='number' name='fields[id]' placeholder='ID'>
-          <input type='text' name='fields[email]' placeholder='Email'>
-          <input type='text' name='fields[phone]' placeholder='Phone'>
-
-          <label>Veg CSA?</label>
-          <div class='select'>
-            <select name='fields[veg_csa]'>
-              <option>Yes</option>
-              <option>No</option>>
-            </select>
-          </div>
-
-          <label>Flower CSA?</label>
-          <div class='select'>
-            <select name='fields[flower_csa]'>
-              <option>Yes</option>
-              <option>No</option>>
-            </select>
-          </div>
-
-          <label>Choose a Pick-Up Location: </label>
-          <div class='select'>
-            <select name='fields[location]'>
-              <option>Phantom Farms in Cumberland, RI</option>
-              <option>118 Gano St in Providence, RI</option>>
-            </select>
-          </div>
-
-          <button type='submit' class="button is-light" id="update-reg-button">Update</button>
-      </form> -->
-
 
 
       <footer class="footer">
