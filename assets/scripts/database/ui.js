@@ -7,12 +7,21 @@ const onLoginSuccess = function (data) {
   app.user = data.user
   console.log('Login Success!')
   console.log(data)
-  ux.homePage()
   $(() => {
     $('#get-all-buttons').show()
     $('#account-signout').show()
     $('#reveal-change-password').show()
+    $('.text-content').show()
+
     $('#sign-in-reveal').hide()
+    $('#warning-messages').hide()
+    $('#account-login').hide()
+    $('#create-account').hide()
+    $('#change-password').hide()
+    $('#account-signout').hide()
+    $('.floral-design-page').hide()
+    $('.csa-share-page').hide()
+    $('#reveal-new-account').hide()
   })
 }
 
@@ -23,9 +32,14 @@ const onLoginError = function (response) {
 
 const onChangePasswordSuccess = function () {
   console.log('You successfully updated the account!')
-  ux.homePage()
-  $('#reveal-change-password').show()
-  $('#account-signout').show()
+  $(() => {
+    $('#reveal-change-password').show()
+    $('#account-signout').show()
+    $('#get-all-buttons').show()
+    $('.text-content').show()
+
+    $('#change-password').hide()
+  })
 }
 
 const onChangePasswordError = function (response) {
@@ -63,6 +77,10 @@ const onSignOutError = function (response) {
 const onCreateQuoteRequestSuccess = function (data) {
   console.log('passing quote request through ui.js')
   console.log(data)
+  ux.homePage()
+  $(() => {
+    $('.floral-design-page').hide()
+  })
 }
 
 const onCreateQuoteRequestError = function (response) {
@@ -80,6 +98,14 @@ const onDeleteQuoteRequestError = function (response) {
 
 const onUpdateQuoteRequestSuccess = function (data) {
   console.log('passing through update QR in ui.js')
+  console.log(data)
+  const id = data.fields.id
+  $(() => {
+    $('.' + id).remove()
+    $('#append-quote-here').append(
+      "<tr><td>" + id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.event_type + "</td><td>" + data.fields.event_date + "</td><td>" + data.fields.color_scheme + "</td><td>" + data.fields.description + "</td><td><a class='button is-dark delete-quote' data-id=" + id + ">Delete</a></td></tr>"
+    )
+  })
 }
 
 const onUpdateQuoteRequestError = function (response) {
@@ -146,6 +172,14 @@ const onDeleteRegistrationError = function (response) {
 
 const onUpdateRegistrationSuccess = function (data) {
   console.log('passing through updateReg in ui.js')
+  console.log(data)
+  const id = data.fields.id
+  $(() => {
+    $('.' + id).remove()
+    $('#append-reg-here').append(
+      "<tr><td>" + data.fields.id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.veg_csa + "</td><td>" + data.fields.flower_csa + "</td><td>" + data.fields.location + "</td><td><a class='button is-dark delete-registration' data-id=" + id + ">Delete</a></td></tr>"
+    )
+  })
 }
 
 const onUpdateRegistrationError = function (response) {

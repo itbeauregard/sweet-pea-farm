@@ -26,12 +26,6 @@
         <div class="navbar-brand">
           <a class="navbar-link home" id='home-nav' href="#">Sweet Pea Farm</a>
 
-          <!-- <div class="navbar-item is-hidden-desktop">
-            <a class="button is-primary sign-in-reveal" href="#">
-              <span>Sign In</span>
-            </a>
-          </div> -->
-
           <div class="navbar-burger burger" data-target="navMenu">
             <span></span>
             <span></span>
@@ -66,22 +60,11 @@
 
           <!-- Signout Account -->
           <form class="navbar-item is-hidden-desktop-only" id='account-signout'>
-            <button type="submit" id='signout' class='button is-dark'>Sign Out</button>
+            <button type="submit" id='signout' class='button is-dark is-large'>Sign Out</button>
           </form>
         </div>
       </nav>
-      <!-- Header content -->
-      <!-- <header class='header'>
-        <div class='logo'><img src='assets/styles/images/logo.jpg' alt='Sweet Pea Farm Logo'></div>
-        <nav class='nav-bar'>
-          <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#'>CSA Shares</a></li>
-            <li><a href='#'>Floral Design</a></li>
-          </ul>
-        </nav>
-        <button class='sign-in'>Sign In</button>
-      </header> -->
+
 
       <div class='account-forms'>
         <!-- Account error messages -->
@@ -91,23 +74,26 @@
           <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
           <p class="success" id="create-account-success">You successfully created an account!</p>
           <p class="error" id="login-error">Wrong password or email.</p>
+          <h4 class='create-quote-success'>Thank you for submitting a quote request! We'll get back to you ASAP.</h4>
         </div>
 
-        <!-- Account login -->
+        <!-- Account login Form-->
         <form class="accounts" id='account-login'>
           <h1>Sign in to your account</h1>
+          <br>
           <div class='form-group columns'>
             <div class='column'>
-              <input class="input is-medium" type="text" name="credentials[email]" placeholder="User Email">
+              <input class="input is-large" type="text" name="credentials[email]" placeholder="User Email">
             </div>
             <div class='column'>
-              <input class="input is-medium" type="password" name="credentials[password]" placeholder="Password">
+              <input class="input is-large" type="password" name="credentials[password]" placeholder="Password">
             </div>
           </div>
+          <br>
           <button type="submit" id='login' class='button is-light is-large'>Log In</button>
         </form>
 
-        <!-- Create Account -->
+        <!-- Create Account Form-->
         <form class='accounts' id='create-account'>
           <h1>Create a new account</h1>
           <div class='form-group columns'>
@@ -142,23 +128,24 @@
           <button type="submit" class='button is-primary' id='create-button' >Create New Account</button>
         </form>
 
-        <!-- Change Password -->
-
+        <!-- Change Password Form-->
         <form class='accounts' id='change-password'>
           <h1>Change your password</h1>
+          <br>
           <div class='form-group columns'>
             <div class='field column'>
               <div class='control'>
-                <input required class="input is-medium" type="password" name="passwords[old]" placeholder="Old Password">
+                <input required class="input is-large" type="password" name="passwords[old]" placeholder="Old Password">
               </div>
             </div>
             <div class='field column'>
               <div class='control'>
-                <input required class="input is-medium" type="password" name="passwords[new]" placeholder="New Password">
+                <input required class="input is-large" type="password" name="passwords[new]" placeholder="New Password">
               </div>
             </div>
           </div>
-          <button type="submit" class='button is-black' id="change-button" name='submit'>Change Password</button>
+          <br>
+          <button type="submit" class='button is-black is-large' id="change-button" name='submit'>Change Password</button>
         </form>
 
       </div>
@@ -168,8 +155,7 @@
           <img class="logo" src="http://i.imgur.com/3SsRjwM.jpg" alt='Sweet Pea Farm Logo'>
         </div>
 
-        <!-- Headings and content -->
-        <!-- <div class='left-side'> -->
+        <!-- Home page content -->
           <div class='home-page'>
             <h1>About Sweet Pea Farm</h1>
             <div class='growing-methods-content'>We are committed to growing healthy food that is also good for our planet. We practice sustainable soil management and our growing practices are in line with USDA Certified Organic standards or higher. In addition, Sweet Pea Farm is in the process of applying for GAP Certification, a voluntary audit program to ensure that vegetables and fruit are produced, packed, handled, and stored as safely as possible. You will be impressed by the beauty and cleanliness of our farm-fresh produce.</div>
@@ -183,7 +169,16 @@
       <!-- Floral Design page -->
         <div class='floral-design-page'>
           <h1>Floral Design</h1>
-          <div class='floral-content'>Some facts regarding our floral design services.</div>
+          <br>
+          <div class='floral-content'>
+            <div>There's no better way to celebrate an anniversary, a birthday or a wedding with gorgeous, locally grown flowers. We offer all kinds of floral arrangements, from corsages to centerpieces. Sweet Pea Farm offers its floral design services May through October. Request a quote below to receive a custom estimate of our services based on your needs.
+            </div>
+            <br>
+            <div> If you are interested in what kind of flowers Sweet Pea has to offer, you might consider a Flower CSA Share. Our Flower Share includes a hand-tied bouquet filled with a mix of fresh summer stems from our fields. Flower shareholders can expect to receive sunflowers, sweet peas, zinnias, lilies, and snapdragons, among others. A great way to sample our offerings.
+            </div>
+          </div>
+          <br>
+          <br>
           <form id='floral-form'>
             <fieldset>
               <legend>Request a Quote</legend>
@@ -205,16 +200,20 @@
                 </div>
               </div>
               <br>
-              <label>Date of Event:
-                <input required class="input is-medium" type='date' name='fields[event_date]'/>
-              </label>
-              <br>
-              <p>Please use this area to answer the following questions:</p>
-              <ul>
-                <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
-                <li>How many of each item do you need?</li>
-              </ul>
-              <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
+              <div class="columns">
+                <div class="column">
+                  <label>Date of Event:
+                    <input required class="input is-medium" type='date' name='fields[event_date]'/>
+                  </label>
+                </div>
+                <div class="column">
+                  <ul>
+                    <li>What kind of floral arrangements do you need? Corsages? Bouquets? Centerpieces?</li>
+                    <li>How many of each item do you need?</li>
+                  </ul>
+                  <textarea class='text-box' required name='fields[description]'>Write something here.</textarea>
+                </div>
+              </div>
               <br>
               <button class="button is-primary is-large" id='floral-quote' type='submit'>Submit Quote Request</button>
             </fieldset>
@@ -243,16 +242,19 @@
               <legend>Register for a CSA Share</legend>
               <div class="columns">
                 <div class="column">
-                  <input required class="input is-medium" type='text' autocomplete='email' name='fields[email]' placeholder='Email Address'>
+                  <input required class="input is-large" type='text' autocomplete='email' name='fields[email]' placeholder='Email Address'>
                 </div>
                 <div class="column">
-                  <input required class="input is-medium" type='text' autocomplete='tel' name='fields[phone]' placeholder='Phone Number'>
+                  <input required class="input is-large" type='text' autocomplete='tel' name='fields[phone]' placeholder='Phone Number'>
                 </div>
               </div>
-              <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='yes'>
-              <label for='veg-csa'>15-week Vegetable CSA</label>
-              <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='yes'>
-              <label for='flower-csa'>8-week Flower CSA</label>
+              <label for='veg-csa'>15-week Vegetable CSA
+                <input required type='checkbox' id='veg-csa' name='fields[veg_csa]' value='yes'>
+              </label>
+              <label for='flower-csa'>8-week Flower CSA
+                <input type='checkbox' id='flower-csa' name='fields[flower_csa]' value='yes'>
+              </label>
+              <br>
               <br>
               <label>Choose a Pick-Up Location: </label>
               <div class='select'>
@@ -262,20 +264,10 @@
                 </select>
               </div>
               <br>
-              <button id='csa-registration' class='button is-light is-medium' type='submit'>Submit Registration</button>
+              <br>
+              <button id='csa-registration' class='button is-light is-large' type='submit'>Submit Registration</button>
             </fieldset>
           </form>
-        </div>
-
-        <!-- <label>Choose a Pick-Up Location:
-        <input list='locations' name='location'></label>
-        <datalist id='locations'>
-          <option value='Phantom Farms in Cumberland, RI'>
-          <option value='118 Gano St in Providence, RI'>
-        </datalist> -->
-        <div id='get-all-buttons'>
-          <button id='get-all-requests' class='button is-primary is-large' type='submit'>Get All Quote Requests</button>
-          <button id='get-all-registrations' class='button is-primary is-large' type='submit'>Get All Registrations</button>
         </div>
 
         <div id='table-holder'>
@@ -284,61 +276,127 @@
         <!--Quote Request Template -->
         <!--Data will be inserted in its according place, replacing the brackets.-->
         <script id="quote-request-template" type="text/x-handlebars-template">
-          <table class='table'>
-            <thead>
-              <tr>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Type of Event</th>
-                <th>Date of Event</th>
-                <th>Color Scheme</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody id='append-here'>
-            {{#each fields}}
-              <tr class={{id}}>
-                <td>{{email}}</td>
-                <td>{{phone}}</td>
-                <td>{{event_type}}</td>
-                <td>{{event_date}}</td>
-                <td>{{color_scheme}}</td>
-                <td>{{description}}</td>
-                <td><a class="button is-dark delete-quote" data-id={{id}}>Delete</a></td>
-              </tr>
-            {{/each}}
-            </tbody>
-          </table>
+          <h1>Floral Design Quote Requests</h1>
+          <br>
+          <form id='update-quote-form'>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Type of Event</th>
+                  <th>Date of Event</th>
+                  <th>Color Scheme</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody id='append-quote-here'>
+              {{#each fields}}
+                <tr class={{id}}>
+                  <td>{{id}}</td>
+                  <td>{{email}}</td>
+                  <td>{{phone}}</td>
+                  <td>{{event_type}}</td>
+                  <td>{{event_date}}</td>
+                  <td>{{color_scheme}}</td>
+                  <td>{{description}}</td>
+                  <td><a class="button is-dark delete-quote" data-id={{id}}>Delete</a></td>
+                </tr>
+              {{/each}}
+              </tbody>
+              <tfoot>
+                <tr class='row-form'>
+                  <td><input type='number' name='fields[id]' placeholder='ID'></td>
+                  <td><input type='text' name='fields[email]' placeholder='Email'></td>
+                  <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
+                  <td><input type='text' name='fields[event_type]' placeholder='Type of Event'>
+                  </td>
+                  <td><input type='date' name='fields[event_date]' placeholder='Date of Event'>
+                  </td>
+                  <td><input type='text' name='fields[color_scheme]' placeholder='Color Scheme'>
+                  </td>
+                  <td><textarea class='text-box' name='fields[description]'>Description</textarea>
+                  </td>
+                  <td>
+                    <button type='submit' class="button is-light" id="update-quote-button">Update</button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </form>
         </script>
 
         <!-- CSA Registration Table Template -->
         <script id="registration-template" type="text/x-handlebars-template">
-          <table class='table'>
-            <thead>
-              <tr>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Vegetable CSA</th>
-                <th>Flower CSA</th>
-                <th>Pick-Up Location</th>
-              </tr>
-            </thead>
-            <tbody id='append-here'>
-            {{#each fields}}
-              <tr class={{id}}>
-                <td>{{email}}</td>
-                <td>{{phone}}</td>
-                <td>{{veg_csa}}</td>
-                <td>{{flower_csa}}</td>
-                <td>{{location}}</td>
-                <td><a class="button is-dark delete-registration" data-id={{id}}>Delete</a></td>
-              </tr>
-            {{/each}}
-            </tbody>
-          </table>
+          <h1>CSA Registrations</h1>
+          <br>
+          <form id='update-registration'>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Vegetable CSA</th>
+                  <th>Flower CSA</th>
+                  <th>Pick-Up Location</th>
+                </tr>
+              </thead>
+              <tbody id='append-reg-here'>
+              {{#each fields}}
+                <tr class={{id}}>
+                  <td>{{id}}</td>
+                  <td>{{email}}</td>
+                  <td>{{phone}}</td>
+                  <td>{{veg_csa}}</td>
+                  <td>{{flower_csa}}</td>
+                  <td>{{location}}</td>
+                  <td><a class="button is-dark delete-registration" data-id={{id}}>Delete</a></td>
+                </tr>
+              {{/each}}
+              </tbody>
+              <tfoot>
+                <tr class='row-form'>
+                  <td><input type='number' name='fields[id]' placeholder='ID'></td>
+                  <td><input type='text' name='fields[email]' placeholder='Email'></td>
+                  <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
+                  <td>
+                    <label>Veg CSA?</label>
+                    <div class='select'>
+                      <select name='fields[veg_csa]'>
+                        <option>Yes</option>
+                        <option>No</option>>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <label>Flower CSA?</label>
+                    <div class='select'>
+                      <select name='fields[flower_csa]'>
+                        <option>Yes</option>
+                        <option>No</option>>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <label>Choose a Pick-Up Location: </label>
+                    <div class='select'>
+                      <select name='fields[location]'>
+                        <option>Phantom Farms in Cumberland, RI</option>
+                        <option>118 Gano St in Providence, RI</option>>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <button type='submit' class="button is-light" id="update-registration-button">Update</button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </form>
         </script>
 
-      </div>
 
       <footer class="footer">
         <div class="container">
@@ -346,6 +404,10 @@
             <div id='reveal-buttons'>
               <button class='button is-primary is-large reveal' type='submit' id='reveal-new-account'>Sign up for new account</button>
               <button class='button is-primary is-large reveal' type='submit' id='reveal-change-password'>Change password</button>
+            </div>
+            <div id='get-all-buttons'>
+              <button id='get-all-requests' class='button is-primary is-large' type='submit'>Get All Quote Requests</button>
+              <button id='get-all-registrations' class='button is-primary is-large' type='submit'>Get All Registrations</button>
             </div>
           </div>
         </div>

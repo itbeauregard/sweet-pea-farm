@@ -96,7 +96,7 @@ const updateQuoteRequest = function (data) {
   console.log('passing through update quote request api.js')
   console.log(data)
   return $.ajax({
-    url: app.host + '/quote_requests/' + data.id,
+    url: app.host + '/quote_requests/' + data.fields.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -174,7 +174,7 @@ const deleteRegistration = function (id) {
 const updateRegistration = function (data) {
   console.log('passing through updateReg api.js')
   return $.ajax({
-    url: app.host + '/registrations/' + data.id,
+    url: app.host + '/registrations/' + data.fields.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -186,7 +186,7 @@ const updateRegistration = function (data) {
         'veg_csa': data.fields.veg_csa,
         'flower_csa': data.fields.flower_csa,
         'location': data.fields.location,
-        'user_id': data.fields.user_id
+        'user_id': app.user.id
       }
     }
   })

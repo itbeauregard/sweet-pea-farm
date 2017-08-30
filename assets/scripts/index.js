@@ -25,10 +25,12 @@ $(() => {
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
   $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
   $(document).on('click', '.delete-quote', events.onDeleteQuoteRequest)
+  $(document).on('submit', '#update-quote-form', events.onUpdateQuoteRequest)
 
   $('.csa-form').on('submit', events.onCreateRegistration)
   $('#get-all-registrations').on('click', events.onGetAllRegistrations)
   $(document).on('click', '.delete-registration', events.onDeleteRegistration)
+  $(document).on('submit', '#update-registration', events.onUpdateRegistration)
 
   // Home page hiding
   $('#warning-messages').hide()
@@ -91,6 +93,8 @@ $(() => {
     $('#get-all-buttons').hide()
     $('.text-content').hide()
     $('#reveal-change-password').hide()
+    $('.floral-design-page').hide()
+    $('.csa-share-page').hide()
   })
 
   // Navigate to Change Password page
