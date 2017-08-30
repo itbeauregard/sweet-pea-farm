@@ -163,7 +163,7 @@ const onCreateRegistrationSuccess = function (data) {
   console.log('passing through createReg in ui.js')
   $(() => {
     ux.homePage()
-    $('#csa-form')[0].reset()
+    $('.csa-form')[0].reset()
   })
 }
 
