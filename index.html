@@ -273,10 +273,6 @@
           <option value='Phantom Farms in Cumberland, RI'>
           <option value='118 Gano St in Providence, RI'>
         </datalist> -->
-        <div id='get-all-buttons'>
-          <button id='get-all-requests' class='button is-primary is-large' type='submit'>Get All Quote Requests</button>
-          <button id='get-all-registrations' class='button is-primary is-large' type='submit'>Get All Registrations</button>
-        </div>
 
         <div id='table-holder'>
         </div>
@@ -313,9 +309,12 @@
 
         <!-- CSA Registration Table Template -->
         <script id="registration-template" type="text/x-handlebars-template">
+          <h1>CSA Registrations</h1>
+          <br>
           <table class='table'>
             <thead>
               <tr>
+                <th>Id</th>
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Vegetable CSA</th>
@@ -326,6 +325,7 @@
             <tbody id='append-here'>
             {{#each fields}}
               <tr class={{id}}>
+                <td>{{id}}</td>
                 <td>{{email}}</td>
                 <td>{{phone}}</td>
                 <td>{{veg_csa}}</td>
@@ -335,6 +335,25 @@
               </tr>
             {{/each}}
             </tbody>
+            <tfoot>
+              <tr class='row-form'>
+                <td><input type='number' name='fields[id]' placeholder='ID'></td>
+                <td><input type='number' name='fields[email]' placeholder='Email'></td>
+                <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
+                <td><input type='text' name='fields[veg_csa]' placeholder='Veg CSA?'></td>
+                <td><input type='text' name='fields[flower_csa]' placeholder='Flower CSA?'></td>
+                <td>
+                  <label>Choose a Pick-Up Location: </label>
+                  <div class='select'>
+                    <select name='fields[location]'>
+                      <option>Phantom Farms in Cumberland, RI</option>
+                      <option>118 Gano St in Providence, RI</option>>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <a class="button is-light" id="update-registration">Update</a>
+                </td>
           </table>
         </script>
 
@@ -346,6 +365,10 @@
             <div id='reveal-buttons'>
               <button class='button is-primary is-large reveal' type='submit' id='reveal-new-account'>Sign up for new account</button>
               <button class='button is-primary is-large reveal' type='submit' id='reveal-change-password'>Change password</button>
+            </div>
+            <div id='get-all-buttons'>
+              <button id='get-all-requests' class='button is-primary is-large' type='submit'>Get All Quote Requests</button>
+              <button id='get-all-registrations' class='button is-primary is-large' type='submit'>Get All Registrations</button>
             </div>
           </div>
         </div>
