@@ -280,31 +280,53 @@
         <!--Quote Request Template -->
         <!--Data will be inserted in its according place, replacing the brackets.-->
         <script id="quote-request-template" type="text/x-handlebars-template">
-          <table class='table'>
-            <thead>
-              <tr>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Type of Event</th>
-                <th>Date of Event</th>
-                <th>Color Scheme</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody id='append-here'>
-            {{#each fields}}
-              <tr class={{id}}>
-                <td>{{email}}</td>
-                <td>{{phone}}</td>
-                <td>{{event_type}}</td>
-                <td>{{event_date}}</td>
-                <td>{{color_scheme}}</td>
-                <td>{{description}}</td>
-                <td><a class="button is-dark delete-quote" data-id={{id}}>Delete</a></td>
-              </tr>
-            {{/each}}
-            </tbody>
-          </table>
+          <form id='quote-form'>
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Type of Event</th>
+                  <th>Date of Event</th>
+                  <th>Color Scheme</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody id='append-here'>
+              {{#each fields}}
+                <tr class={{id}}>
+                  <td>{{id}}</td>
+                  <td>{{email}}</td>
+                  <td>{{phone}}</td>
+                  <td>{{event_type}}</td>
+                  <td>{{event_date}}</td>
+                  <td>{{color_scheme}}</td>
+                  <td>{{description}}</td>
+                  <td><a class="button is-dark delete-quote" data-id={{id}}>Delete</a></td>
+                </tr>
+              {{/each}}
+              </tbody>
+              <tfoot>
+                <tr class='row-form'>
+                  <td><input type='number' name='fields[id]' placeholder='ID'></td>
+                  <td><input type='text' name='fields[email]' placeholder='Email'></td>
+                  <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
+                  <td><input type='text' name='fields[event_type]' placeholder='Type of Event'>
+                  </td>
+                  <td><input type='date' name='fields[event_date]' placeholder='Date of Event'>
+                  </td>
+                  <td><input type='text' name='fields[color_scheme]' placeholder='Color Scheme'>
+                  </td>
+                  <td><textarea class='text-box' name='fields[description]'>Description</textarea>
+                  </td>
+                  <td>
+                    <button type='submit' class="button is-light" id="update-quote-button">Update</button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </form>
         </script>
 
         <!-- CSA Registration Table Template -->
