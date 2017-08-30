@@ -174,7 +174,7 @@ const deleteRegistration = function (id) {
 const updateRegistration = function (data) {
   console.log('passing through updateReg api.js')
   return $.ajax({
-    url: app.host + '/registrations/' + data.id,
+    url: app.host + '/registrations/' + data.fields.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -185,7 +185,8 @@ const updateRegistration = function (data) {
         'phone': data.fields.phone,
         'veg_csa': data.fields.veg_csa,
         'flower_csa': data.fields.flower_csa,
-        'location': data.fields.location
+        'location': data.fields.location,
+        'user_id': app.user.id
       }
     }
   })

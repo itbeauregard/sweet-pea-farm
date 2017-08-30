@@ -146,6 +146,14 @@ const onDeleteRegistrationError = function (response) {
 
 const onUpdateRegistrationSuccess = function (data) {
   console.log('passing through updateReg in ui.js')
+  console.log(data)
+  const id = data.fields.id
+  $(() => {
+    $('.' + id).remove()
+    $('#append-here').append(
+      "<tr><td>" + data.fields.id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.veg_csa + "</td><td>" + data.fields.flower_csa + "</td><td>" + data.fields.location + "</td><td><a class='button is-dark delete-registration' data-id=" + id + ">Delete</a></td></tr>"
+    )
+  })
 }
 
 const onUpdateRegistrationError = function (response) {

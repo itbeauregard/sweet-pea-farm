@@ -123,7 +123,7 @@ const onUpdateRegistration = function (event) {
   console.log('passing through updateReg through events.js')
   console.log(data)
   api.updateRegistration(data)
-    .then(ui.onUpdateRegistrationSuccess)
+    .then(ui.onUpdateRegistrationSuccess(data))
     .catch(ui.onUpdateRegistrationError)
 }
 
