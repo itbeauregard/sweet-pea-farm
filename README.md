@@ -38,3 +38,5 @@ I referred to my tic-tac-toe application a lot through this project when I neede
 3. Smartphone compatibility: I didn't test for smartphones as much, though I think using Bulma helped to make my app more flexible. I'd like to test those views because I know potential employers do a lot of scoping from their phones now. 
 
 4. Error messages: Just like with last project, I neglected to add using-facing errors messages, which means the user's only indication of failure is that the page isn't changing. 
+
+5. Seed & Example data: I did not create seed data for this project which would be super useful in professionally demo-ing this app. Right now, the data table entries are... less professional. 
