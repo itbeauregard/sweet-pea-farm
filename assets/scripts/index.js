@@ -46,14 +46,18 @@ $(() => {
   // Navigate to Home page
   $('#home-nav').on('click', function () {
     $('.text-content').show()
+    $('#get-all-buttons').show()
+    $('#get-all-requests').show()
+    $('#get-all-registrations').show()
+    $('#reveal-change-password').show()
+
     $('#warning-messages').hide()
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
     $('.floral-design-page').hide()
     $('.csa-share-page').hide()
-    $('#get-all-buttons').hide()
-    $('#reveal-buttons').hide()
+    $('#table-holder').empty()
   })
 
   // Navigate to CSA registration page
@@ -98,12 +102,15 @@ $(() => {
   // Navigate to Change Password page
   $('#reveal-change-password').on('click', function () {
     $('#change-password').show()
+
     $('#account-login').hide()
     $('#reveal-buttons').hide()
     $('#get-all-buttons').hide()
     $('.text-content').hide()
     $('.csa-share-page').hide()
     $('.floral-design-page').hide()
+
+    $('#table-holder').empty()
   })
 
   // Navigate to Create Account page
