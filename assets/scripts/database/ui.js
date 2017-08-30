@@ -18,7 +18,6 @@ const onLoginSuccess = function (data) {
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
-    $('#account-signout').hide()
     $('.floral-design-page').hide()
     $('.csa-share-page').hide()
     $('#reveal-new-account').hide()
@@ -39,6 +38,7 @@ const onChangePasswordSuccess = function () {
     $('.text-content').show()
 
     $('#change-password').hide()
+    $('#table-holder').empty()
   })
 }
 
@@ -65,9 +65,11 @@ const onCreateAccountError = function (response) {
 const onSignOutSuccess = function () {
   console.log('Sign out successful!')
   app.user = null
-  ux.homePage()
-  $('#sign-in-reveal').show()
-  $('#account-signout').hide()
+  $(() => {
+    ux.homePage()
+    $('#sign-in-reveal').show()
+    $('#account-signout').hide()
+  })
 }
 
 const onSignOutError = function (response) {
@@ -77,9 +79,9 @@ const onSignOutError = function (response) {
 const onCreateQuoteRequestSuccess = function (data) {
   console.log('passing quote request through ui.js')
   console.log(data)
-  ux.homePage()
   $(() => {
-    $('.floral-design-page').hide()
+    ux.homePage()
+    $('#floral-form')[0].reset()
   })
 }
 
@@ -105,7 +107,9 @@ const onUpdateQuoteRequestSuccess = function (data) {
     $('#append-quote-here').append(
       "<tr><td>" + id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.event_type + "</td><td>" + data.fields.event_date + "</td><td>" + data.fields.color_scheme + "</td><td>" + data.fields.description + "</td><td><a class='button is-dark delete-quote' data-id=" + id + ">Delete</a></td></tr>"
     )
+    $('#update-quote-form')[0].reset()
   })
+
 }
 
 const onUpdateQuoteRequestError = function (response) {
@@ -127,6 +131,10 @@ const onGetAllQuoteRequestsSuccess = function (data) {
     // Hide home page
     $('.text-content').hide()
     $('#get-all-requests').hide()
+
+    $('#get-all-registrations').show()
+    // Empty table holder div in case something else is in there
+    $('#table-holder').empty()
   })
   drawQuoteRequestTable(data)
 }
@@ -154,7 +162,10 @@ const onGetAllQuoteRequestsError = function (response) {
 
 const onCreateRegistrationSuccess = function (data) {
   console.log('passing through createReg in ui.js')
-  ux.homePage()
+  $(() => {
+    ux.homePage()
+    $('#csa-form')[0].reset()
+  })
 }
 
 const onCreateRegistrationError = function (response) {
@@ -180,6 +191,7 @@ const onUpdateRegistrationSuccess = function (data) {
       "<tr><td>" + data.fields.id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.veg_csa + "</td><td>" + data.fields.flower_csa + "</td><td>" + data.fields.location + "</td><td><a class='button is-dark delete-registration' data-id=" + id + ">Delete</a></td></tr>"
     )
   })
+  $('#update-registration')[0].reset()
 }
 
 const onUpdateRegistrationError = function (response) {
@@ -201,6 +213,10 @@ const onGetAllRegistrationsSuccess = function (data) {
     // Hide home page
     $('.text-content').hide()
     $('#get-all-registrations').hide()
+
+    $('#get-all-requests').show()
+    // Empty table holder div in case something else is in there
+    $('#table-holder').empty()
     // Grab the template script
     const theTemplateScript = $('#registration-template').html()
     // Compile the template
