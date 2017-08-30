@@ -340,8 +340,24 @@
                 <td><input type='number' name='fields[id]' placeholder='ID'></td>
                 <td><input type='number' name='fields[email]' placeholder='Email'></td>
                 <td><input type='text' name='fields[phone]' placeholder='Phone'></td>
-                <td><input type='text' name='fields[veg_csa]' placeholder='Veg CSA?'></td>
-                <td><input type='text' name='fields[flower_csa]' placeholder='Flower CSA?'></td>
+                <td>
+                  <label>Veg CSA?</label>
+                  <div class='select'>
+                    <select name='fields[veg_csa]'>
+                      <option>Yes</option>
+                      <option>No</option>>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <label>Flower CSA?</label>
+                  <div class='select'>
+                    <select name='fields[flower_csa]'>
+                      <option>Yes</option>
+                      <option>No</option>>
+                    </select>
+                  </div>
+                </td>
                 <td>
                   <label>Choose a Pick-Up Location: </label>
                   <div class='select'>
