@@ -93,6 +93,8 @@ $(() => {
     $('#get-all-buttons').hide()
     $('.text-content').hide()
     $('#reveal-change-password').hide()
+    $('.floral-design-page').hide()
+    $('.csa-share-page').hide()
   })
 
   // Navigate to Change Password page

@@ -77,6 +77,10 @@ const onSignOutError = function (response) {
 const onCreateQuoteRequestSuccess = function (data) {
   console.log('passing quote request through ui.js')
   console.log(data)
+  ux.homePage()
+  $(() => {
+    $('.floral-design-page').hide()
+  })
 }
 
 const onCreateQuoteRequestError = function (response) {
