@@ -25,10 +25,12 @@ $(() => {
   $('#floral-form').on('submit', events.onCreateQuoteRequest)
   $('#get-all-requests').on('click', events.onGetAllQuoteRequests)
   $(document).on('click', '.delete-quote', events.onDeleteQuoteRequest)
+  $(document).on('submit', '#update-quote-form', events.onUpdateQuoteRequest)
 
   $('.csa-form').on('submit', events.onCreateRegistration)
   $('#get-all-registrations').on('click', events.onGetAllRegistrations)
   $(document).on('click', '.delete-registration', events.onDeleteRegistration)
+  $(document).on('submit', '#update-registration', events.onUpdateRegistration)
 
   // Home page hiding
   $('#warning-messages').hide()
@@ -44,14 +46,18 @@ $(() => {
   // Navigate to Home page
   $('#home-nav').on('click', function () {
     $('.text-content').show()
+    $('#get-all-buttons').show()
+    $('#get-all-requests').show()
+    $('#get-all-registrations').show()
+    $('#reveal-change-password').show()
+
     $('#warning-messages').hide()
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
     $('.floral-design-page').hide()
     $('.csa-share-page').hide()
-    $('#get-all-buttons').hide()
-    $('#reveal-buttons').hide()
+    $('#table-holder').empty()
   })
 
   // Navigate to CSA registration page
@@ -62,7 +68,6 @@ $(() => {
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
-    $('#account-signout').hide()
     $('.floral-design-page').hide()
     $('#get-all-buttons').hide()
     $('#reveal-buttons').hide()
@@ -77,7 +82,6 @@ $(() => {
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
-    $('#account-signout').hide()
     $('.csa-share-page').hide()
     $('#get-all-buttons').hide()
     $('#reveal-buttons').hide()
@@ -91,17 +95,22 @@ $(() => {
     $('#get-all-buttons').hide()
     $('.text-content').hide()
     $('#reveal-change-password').hide()
+    $('.floral-design-page').hide()
+    $('.csa-share-page').hide()
   })
 
   // Navigate to Change Password page
   $('#reveal-change-password').on('click', function () {
     $('#change-password').show()
+
     $('#account-login').hide()
     $('#reveal-buttons').hide()
     $('#get-all-buttons').hide()
     $('.text-content').hide()
     $('.csa-share-page').hide()
     $('.floral-design-page').hide()
+
+    $('#table-holder').empty()
   })
 
   // Navigate to Create Account page
