@@ -24,10 +24,6 @@ legend {
 footer {
   margin-top: 50px;
 }
-//
-// input {
-//   margin: 10px;
-// }
 
 ul {
   list-style: none;
@@ -35,6 +31,14 @@ ul {
 
 .logo {
   width: 60%;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }
 
 .csa-form {

@@ -33,7 +33,7 @@ const onCreateAccount = function (event) {
   console.log('passing through events.js')
   console.log(data)
   if (data.credentials.password !== data.credentials.password_confirmation) {
-    ui.onCreateAccountError("passwords don't match")
+    ui.onPasswordMatchError()
   } else {
     api.createAccount(data)
       .then(ui.onCreateAccountSuccess)

@@ -33,25 +33,25 @@ $(() => {
   $(document).on('submit', '#update-registration', events.onUpdateRegistration)
 
   // Home page hiding
-  $('#warning-messages').hide()
+  $('#warning-messages').children().hide()
   $('#account-login').hide()
   $('#create-account').hide()
   $('#change-password').hide()
   $('#account-signout').hide()
   $('.floral-design-page').hide()
   $('.csa-share-page').hide()
-  $('#get-all-buttons').hide()
-  $('#reveal-buttons').hide()
+  $('#get-all-buttons').children().hide()
+  $('#reveal-buttons').children().hide()
 
   // Navigate to Home page
   $('#home-nav').on('click', function () {
     $('.text-content').show()
-    $('#get-all-buttons').show()
+    $('#get-all-buttons').children().show()
     $('#get-all-requests').show()
     $('#get-all-registrations').show()
     $('#reveal-change-password').show()
 
-    $('#warning-messages').hide()
+    $('#warning-messages').children().hide()
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
@@ -64,13 +64,13 @@ $(() => {
   $('#registration-nav').on('click', function () {
     $('.csa-share-page').show()
     $('.text-content').hide()
-    $('#warning-messages').hide()
+    $('#warning-messages').children().hide()
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
     $('.floral-design-page').hide()
-    $('#get-all-buttons').hide()
-    $('#reveal-buttons').hide()
+    $('#get-all-buttons').children().hide()
+    $('#reveal-buttons').children().hide()
     $('#table-holder').empty()
   })
 
@@ -78,21 +78,21 @@ $(() => {
   $('#floral-design-nav').on('click', function () {
     $('.floral-design-page').show()
     $('.text-content').hide()
-    $('#warning-messages').hide()
+    $('#warning-messages').children().hide()
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
     $('.csa-share-page').hide()
-    $('#get-all-buttons').hide()
-    $('#reveal-buttons').hide()
+    $('#get-all-buttons').children().hide()
+    $('#reveal-buttons').children().hide()
     $('#table-holder').empty()
   })
 
   // Navigate to Sign In page
   $('#sign-in-reveal').on('click', function () {
     $('#account-login').show()
-    $('#reveal-buttons').show()
-    $('#get-all-buttons').hide()
+    $('#reveal-buttons').children().show()
+    $('#get-all-buttons').children().hide()
     $('.text-content').hide()
     $('#reveal-change-password').hide()
     $('.floral-design-page').hide()
@@ -104,8 +104,8 @@ $(() => {
     $('#change-password').show()
 
     $('#account-login').hide()
-    $('#reveal-buttons').hide()
-    $('#get-all-buttons').hide()
+    $('#reveal-buttons').children().hide()
+    $('#get-all-buttons').children().hide()
     $('.text-content').hide()
     $('.csa-share-page').hide()
     $('.floral-design-page').hide()
@@ -117,7 +117,8 @@ $(() => {
   $('#reveal-new-account').on('click', function () {
     $('#create-account').show()
     $('#account-login').hide()
-    $('#reveal-buttons').hide()
+    $('#reveal-buttons').children().hide()
     $('#sign-in-reveal').hide()
+    $('#warning-messages').children().hide()
   })
 })

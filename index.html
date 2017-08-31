@@ -71,10 +71,11 @@
         <div id='warning-messages'>
           <p class="error" id="password-error">Double check your old password.</p>
           <p class="success" id="password-success">You successfully changed your password!</p>
-          <p class="error" id="create-account-error">Either your username is taken or your passwords don't match.</p>
+          <p class="error" id="create-account-error">Your username may be already taken, try another.</p>
+          <p class="error" id="password-match-error">Your password fields don't match.</p>
           <p class="success" id="create-account-success">You successfully created an account!</p>
           <p class="error" id="login-error">Wrong password or email.</p>
-          <h4 class='create-quote-success'>Thank you for submitting a quote request! We'll get back to you ASAP.</h4>
+          <h4 class="success" id='create-quote-success'>Thank you for submitting a quote request! We'll get back to you ASAP.</h4>
         </div>
 
         <!-- Account login Form-->
@@ -125,7 +126,7 @@
               </div>
             </div>
           </div>
-          <button type="submit" class='button is-primary' id='create-button' >Create New Account</button>
+          <button type="submit" class='button is-primary is-large' id='create-button' >Create New Account</button>
         </form>
 
         <!-- Change Password Form-->

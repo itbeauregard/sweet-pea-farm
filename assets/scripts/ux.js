@@ -7,7 +7,7 @@ const homePage = function () {
   $('#get-all-registrations').show()
   $('#reveal-change-password').show()
 
-  $('#warning-messages').hide()
+  $('#warning-messages').children().hide()
   $('#account-login').hide()
   $('#create-account').hide()
   $('#change-password').hide()
