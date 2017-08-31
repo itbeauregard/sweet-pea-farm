@@ -8,13 +8,13 @@ const onLoginSuccess = function (data) {
   console.log('Login Success!')
   console.log(data)
   $(() => {
-    $('#get-all-buttons').show()
+    $('#get-all-buttons').children().show()
     $('#account-signout').show()
     $('#reveal-change-password').show()
     $('.text-content').show()
 
     $('#sign-in-reveal').hide()
-    $('#warning-messages').hide()
+    $('#warning-messages').children().hide()
     $('#account-login').hide()
     $('#create-account').hide()
     $('#change-password').hide()
@@ -34,15 +34,18 @@ const onChangePasswordSuccess = function () {
   $(() => {
     $('#reveal-change-password').show()
     $('#account-signout').show()
-    $('#get-all-buttons').show()
+    $('#get-all-buttons').children().show()
     $('.text-content').show()
+    $('#password-success').show()
 
     $('#change-password').hide()
+    $('#password-error').hide()
   })
 }
 
 const onChangePasswordError = function (response) {
   console.log(response)
+  $('#password-error').show()
 }
 
 const onCreateAccountSuccess = function (data) {
@@ -50,15 +53,25 @@ const onCreateAccountSuccess = function (data) {
   console.log(data)
   $(() => {
     $('#account-login').show()
-    $('#reveal-buttons').show()
-    $('#get-all-buttons').hide()
+    $('#reveal-buttons').children().show()
+    $('#create-account-success').show()
+
+    $('#get-all-buttons').children().hide()
     $('.text-content').hide()
     $('#create-account').hide()
+    $('#create-account-error').hide()
+    $('#password-match-error').hide()
   })
+}
+
+const onPasswordMatchError = function () {
+  console.log('passing through password-match-error in ui.js')
+  $('#password-match-error').show()
 }
 
 const onCreateAccountError = function (response) {
   console.log(response)
+  $('#create-account-error').show()
 }
 
 const onSignOutSuccess = function () {
@@ -242,6 +255,7 @@ module.exports = {
   onChangePasswordError,
   onCreateAccountSuccess,
   onCreateAccountError,
+  onPasswordMatchError,
   onSignOutSuccess,
   onSignOutError,
   onCreateQuoteRequestSuccess,
