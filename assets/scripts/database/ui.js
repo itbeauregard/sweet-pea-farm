@@ -81,10 +81,14 @@ const onCreateAccountError = function (response) {
 const onSignOutSuccess = function () {
   console.log('Sign out successful!')
   app.user = null
+  console.log(app.user)
   $(() => {
     ux.homePage()
     $('#sign-in-reveal').show()
     $('#account-signout').hide()
+    $('#table-holder').empty()
+    $('#get-all-buttons').children().hide()
+    $('#reveal-change-password').hide()
   })
 }
 
