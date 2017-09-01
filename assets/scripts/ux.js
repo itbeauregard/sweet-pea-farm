@@ -16,6 +16,18 @@ const homePage = function () {
   $('#reveal-new-account').hide()
 }
 
+const signInPage = function () {
+  $('#account-login').show()
+  $('#reveal-buttons').children().show()
+
+  $('#get-all-buttons').children().hide()
+  $('.text-content').hide()
+  $('#reveal-change-password').hide()
+  $('.floral-design-page').hide()
+  $('.csa-share-page').hide()
+}
+
 module.exports = {
-  homePage
+  homePage,
+  signInPage
 }

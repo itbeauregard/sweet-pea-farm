@@ -44,21 +44,7 @@ $(() => {
   $('#reveal-buttons').children().hide()
 
   // Navigate to Home page
-  $('#home-nav').on('click', function () {
-    $('.text-content').show()
-    $('#get-all-buttons').children().show()
-    $('#get-all-requests').show()
-    $('#get-all-registrations').show()
-    $('#reveal-change-password').show()
-
-    $('#warning-messages').children().hide()
-    $('#account-login').hide()
-    $('#create-account').hide()
-    $('#change-password').hide()
-    $('.floral-design-page').hide()
-    $('.csa-share-page').hide()
-    $('#table-holder').empty()
-  })
+  $('#home-nav').on('click', events.onClickHome)
 
   // Navigate to CSA registration page
   $('#registration-nav').on('click', function () {

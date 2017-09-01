@@ -101,6 +101,7 @@ const onCreateQuoteRequestSuccess = function (data) {
   console.log(data)
   $(() => {
     ux.homePage()
+    $('#create-quote-success').show()
     $('#floral-form')[0].reset()
   })
 }
@@ -184,6 +185,7 @@ const onCreateRegistrationSuccess = function (data) {
   console.log('passing through createReg in ui.js')
   $(() => {
     ux.homePage()
+    $('#create-registration-success').show()
     $('.csa-form')[0].reset()
   })
 }
@@ -256,6 +258,13 @@ const onGetAllRegistrationsError = function (response) {
   console.log(response)
 }
 
+const onSignInPlease = function (response) {
+  $(() => {
+    ux.signInPage()
+    $('#sign-in-please').show()
+  })
+}
+
 module.exports = {
   onLoginSuccess,
   onLoginError,
@@ -286,5 +295,6 @@ module.exports = {
   onGetRegistrationSuccess,
   onGetRegistrationError,
   onGetAllRegistrationsSuccess,
-  onGetAllRegistrationsError
+  onGetAllRegistrationsError,
+  onSignInPlease
 }

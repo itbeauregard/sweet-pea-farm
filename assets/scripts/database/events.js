@@ -3,6 +3,7 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const app = require('../store.js')
 
 const onLogin = function (event) {
   event.preventDefault()
@@ -52,9 +53,13 @@ const onCreateQuoteRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('passing quote request through events.js')
-  api.createQuoteRequest(data)
-    .then(ui.onCreateQuoteRequestSuccess)
-    .catch(ui.onCreateQuoteRequestError)
+  if (app.user === undefined) {
+    ui.onSignInPlease()
+  } else {
+    api.createQuoteRequest(data)
+      .then(ui.onCreateQuoteRequestSuccess)
+      .catch(ui.onCreateQuoteRequestError)
+  }
 }
 
 // TODO: find out if I need to pass data through this
@@ -102,10 +107,13 @@ const onCreateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('passing through createReg through events.js')
-  console.log(data)
-  api.createRegistration(data)
-    .then(ui.onCreateRegistrationSuccess)
-    .catch(ui.onCreateRegistrationError)
+  if (app.user !== undefined || app.user !== null) {
+    ui.onSignInPlease()
+  } else {
+    api.createRegistration(data)
+      .then(ui.onCreateRegistrationSuccess)
+      .catch(ui.onCreateRegistrationError)
+  }
 }
 
 const onDeleteRegistration = function (event) {
@@ -145,6 +153,29 @@ const onGetAllRegistrations = function (event) {
     .catch(ui.onGetAllRegistrationsError)
 }
 
+const onClickHome = function (event) {
+  event.preventDefault()
+  console.log(app.user)
+  $(() => {
+    if (app.user !== undefined && app.user !== null) {
+      $('#get-all-buttons').children().show()
+      $('#reveal-change-password').show()
+      $('#account-signout').show()
+    } else {
+      $('#sign-in-reveal').show()
+    }
+    $('.text-content').show()
+
+    $('#warning-messages').children().hide()
+    $('#account-login').hide()
+    $('#create-account').hide()
+    $('#change-password').hide()
+    $('.floral-design-page').hide()
+    $('.csa-share-page').hide()
+    $('#table-holder').empty()
+  })
+}
+
 module.exports = {
   onLogin,
   onChangePassword,
@@ -159,5 +190,6 @@ module.exports = {
   onDeleteRegistration,
   onUpdateRegistration,
   onGetRegistration,
-  onGetAllRegistrations
+  onGetAllRegistrations,
+  onClickHome
 }
