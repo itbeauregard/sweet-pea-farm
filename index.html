@@ -7,10 +7,6 @@
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- <link rel="stylesheet" type="text/scss" href="./assets/styles/index.scss"> -->
-      <!-- Naughty links I added to use Bulma-->
-
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -65,7 +61,6 @@
         </div>
       </nav>
 
-
       <div class='account-forms'>
         <!-- Account error messages -->
         <div id='warning-messages'>
@@ -75,7 +70,10 @@
           <p class="error" id="password-match-error">Your password fields don't match.</p>
           <p class="success" id="create-account-success">You successfully created an account!</p>
           <p class="error" id="login-error">Wrong password or email.</p>
+          <p class="error" id="sign-in-please">Please sign in to your account or sign up for a new one.</p>
           <h4 class="success" id='create-quote-success'>Thank you for submitting a quote request! We'll get back to you ASAP.</h4>
+          <h4 class="success" id='create-registration-success'>Thank you for submitting your CSA registration! We'll get back to you soon with further details on this year's CSA program.</h4>
+
         </div>
 
         <!-- Account login Form-->
@@ -183,6 +181,8 @@
           <form id='floral-form'>
             <fieldset>
               <legend>Request a Quote</legend>
+              <h5>Please sign into your account before submitting this form.</h5>
+              <br>
               <div class="columns">
                 <div class="column">
                   <input required class="input is-medium" type='text' name='fields[email]' autocomplete='email' placeholder='Email Address'>
@@ -241,6 +241,8 @@
           <form class='csa-form'>
             <fieldset>
               <legend>Register for a CSA Share</legend>
+              <h5>Please sign into your account before submitting this form.</h5>
+              <br>
               <div class="columns">
                 <div class="column">
                   <input required class="input is-large" type='text' autocomplete='email' name='fields[email]' placeholder='Email Address'>

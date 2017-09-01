@@ -67,20 +67,28 @@ const onCreateAccountSuccess = function (data) {
 const onPasswordMatchError = function () {
   console.log('passing through password-match-error in ui.js')
   $('#password-match-error').show()
+
+  $('#create-account-error').hide()
 }
 
 const onCreateAccountError = function (response) {
   console.log(response)
   $('#create-account-error').show()
+
+  $('#password-match-error').hide()
 }
 
 const onSignOutSuccess = function () {
   console.log('Sign out successful!')
   app.user = null
+  console.log(app.user)
   $(() => {
     ux.homePage()
     $('#sign-in-reveal').show()
     $('#account-signout').hide()
+    $('#table-holder').empty()
+    $('#get-all-buttons').children().hide()
+    $('#reveal-change-password').hide()
   })
 }
 
@@ -93,6 +101,7 @@ const onCreateQuoteRequestSuccess = function (data) {
   console.log(data)
   $(() => {
     ux.homePage()
+    $('#create-quote-success').show()
     $('#floral-form')[0].reset()
   })
 }
@@ -176,6 +185,7 @@ const onCreateRegistrationSuccess = function (data) {
   console.log('passing through createReg in ui.js')
   $(() => {
     ux.homePage()
+    $('#create-registration-success').show()
     $('.csa-form')[0].reset()
   })
 }
@@ -248,6 +258,13 @@ const onGetAllRegistrationsError = function (response) {
   console.log(response)
 }
 
+const onSignInPlease = function (response) {
+  $(() => {
+    ux.signInPage()
+    $('#sign-in-please').show()
+  })
+}
+
 module.exports = {
   onLoginSuccess,
   onLoginError,
@@ -278,5 +295,6 @@ module.exports = {
   onGetRegistrationSuccess,
   onGetRegistrationError,
   onGetAllRegistrationsSuccess,
-  onGetAllRegistrationsError
+  onGetAllRegistrationsError,
+  onSignInPlease
 }
