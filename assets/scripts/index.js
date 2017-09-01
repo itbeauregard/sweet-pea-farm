@@ -106,6 +106,7 @@ $(() => {
     $('#account-login').hide()
     $('#reveal-buttons').children().hide()
     $('#get-all-buttons').children().hide()
+    $('#warning-messages').children().hide()
     $('.text-content').hide()
     $('.csa-share-page').hide()
     $('.floral-design-page').hide()

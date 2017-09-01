@@ -67,11 +67,15 @@ const onCreateAccountSuccess = function (data) {
 const onPasswordMatchError = function () {
   console.log('passing through password-match-error in ui.js')
   $('#password-match-error').show()
+
+  $('#create-account-error').hide()
 }
 
 const onCreateAccountError = function (response) {
   console.log(response)
   $('#create-account-error').show()
+
+  $('#password-match-error').hide()
 }
 
 const onSignOutSuccess = function () {
