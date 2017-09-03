@@ -5,10 +5,10 @@ const ux = require('../ux.js')
 
 const onLoginSuccess = function (data) {
   app.user = data.user
-  console.log('Login Success!')
-  console.log(data)
   $(() => {
-    $('#get-all-buttons').children().show()
+    if (app.user.is_admin === true) {
+      $('#get-all-buttons').children().show()
+    }
     $('#account-signout').show()
     $('#reveal-change-password').show()
     $('.text-content').show()
@@ -25,16 +25,16 @@ const onLoginSuccess = function (data) {
 }
 
 const onLoginError = function (response) {
-  console.log(response)
   $('#login-error').show()
 }
 
 const onChangePasswordSuccess = function () {
-  console.log('You successfully updated the account!')
   $(() => {
+    if (app.user.is_admin === true) {
+      $('#get-all-buttons').children().show()
+    }
     $('#reveal-change-password').show()
     $('#account-signout').show()
-    $('#get-all-buttons').children().show()
     $('.text-content').show()
     $('#password-success').show()
 
@@ -44,13 +44,10 @@ const onChangePasswordSuccess = function () {
 }
 
 const onChangePasswordError = function (response) {
-  console.log(response)
   $('#password-error').show()
 }
 
 const onCreateAccountSuccess = function (data) {
-  console.log('Create Account Success!')
-  console.log(data)
   $(() => {
     $('#account-login').show()
     $('#reveal-buttons').children().show()
@@ -65,23 +62,19 @@ const onCreateAccountSuccess = function (data) {
 }
 
 const onPasswordMatchError = function () {
-  console.log('passing through password-match-error in ui.js')
   $('#password-match-error').show()
 
   $('#create-account-error').hide()
 }
 
 const onCreateAccountError = function (response) {
-  console.log(response)
   $('#create-account-error').show()
 
   $('#password-match-error').hide()
 }
 
 const onSignOutSuccess = function () {
-  console.log('Sign out successful!')
   app.user = null
-  console.log(app.user)
   $(() => {
     ux.homePage()
     $('#sign-in-reveal').show()
@@ -93,12 +86,9 @@ const onSignOutSuccess = function () {
 }
 
 const onSignOutError = function (response) {
-  console.log(response)
 }
 
 const onCreateQuoteRequestSuccess = function (data) {
-  console.log('passing quote request through ui.js')
-  console.log(data)
   $(() => {
     ux.homePage()
     $('#create-quote-success').show()
@@ -107,51 +97,41 @@ const onCreateQuoteRequestSuccess = function (data) {
 }
 
 const onCreateQuoteRequestError = function (response) {
-  console.log(response)
 }
 
 const onDeleteQuoteRequestSuccess = function (id) {
-  console.log('passing through delete QR in ui.js')
   $('.' + id).remove()
 }
 
 const onDeleteQuoteRequestError = function (response) {
-  console.log(response)
 }
 
 const onUpdateQuoteRequestSuccess = function (data) {
-  console.log('passing through update QR in ui.js')
-  console.log(data)
   const id = data.fields.id
   $(() => {
     $('.' + id).remove()
     $('#append-quote-here').append(
-      "<tr><td>" + id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.event_type + "</td><td>" + data.fields.event_date + "</td><td>" + data.fields.color_scheme + "</td><td>" + data.fields.description + "</td><td><a class='button is-dark delete-quote' data-id=" + id + ">Delete</a></td></tr>"
+      "<tr class=" + id + "><td>" + id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.event_type + "</td><td>" + data.fields.event_date + "</td><td>" + data.fields.color_scheme + "</td><td>" + data.fields.description + "</td><td><a class='button is-dark delete-quote' data-id=" + id + ">Delete</a></td></tr>"
     )
     $('#update-quote-form')[0].reset()
   })
-
 }
 
 const onUpdateQuoteRequestError = function (response) {
-  console.log(response)
 }
 
 const onGetQuoteRequestSuccess = function (data) {
-  console.log('passing through getQR in ui.js')
 }
 
 const onGetQuoteRequestError = function (response) {
-  console.log(response)
 }
 
 const onGetAllQuoteRequestsSuccess = function (data) {
-  console.log('passing through getAllQR in ui.js')
-  console.log(data)
   $(() => {
     // Hide home page
     $('.text-content').hide()
     $('#get-all-requests').hide()
+    $('#warning-messages').children().hide()
 
     $('#get-all-registrations').show()
     // Empty table holder div in case something else is in there
@@ -178,11 +158,9 @@ const drawQuoteRequestTable = function (data) {
 }
 
 const onGetAllQuoteRequestsError = function (response) {
-  console.log(response)
 }
 
 const onCreateRegistrationSuccess = function (data) {
-  console.log('passing through createReg in ui.js')
   $(() => {
     ux.homePage()
     $('#create-registration-success').show()
@@ -191,50 +169,41 @@ const onCreateRegistrationSuccess = function (data) {
 }
 
 const onCreateRegistrationError = function (response) {
-  console.log(response)
 }
 
 const onDeleteRegistrationSuccess = function (id) {
-  console.log('passing through deleteReg in ui.js')
   $('.' + id).remove()
 }
 
 const onDeleteRegistrationError = function (response) {
-  console.log(response)
 }
 
 const onUpdateRegistrationSuccess = function (data) {
-  console.log('passing through updateReg in ui.js')
-  console.log(data)
   const id = data.fields.id
   $(() => {
     $('.' + id).remove()
     $('#append-reg-here').append(
-      "<tr><td>" + data.fields.id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.veg_csa + "</td><td>" + data.fields.flower_csa + "</td><td>" + data.fields.location + "</td><td><a class='button is-dark delete-registration' data-id=" + id + ">Delete</a></td></tr>"
+      "<tr class=" + id + "><td>" + id + "</td><td>" + data.fields.email + "</td><td>" + data.fields.phone + "</td><td>" + data.fields.veg_csa + "</td><td>" + data.fields.flower_csa + "</td><td>" + data.fields.location + "</td><td><a class='button is-dark delete-registration' data-id=" + id + ">Delete</a></td></tr>"
     )
   })
   $('#update-registration')[0].reset()
 }
 
 const onUpdateRegistrationError = function (response) {
-  console.log(response)
 }
 
 const onGetRegistrationSuccess = function (data) {
-  console.log('passing through getReg in ui.js')
 }
 
 const onGetRegistrationError = function (response) {
-  console.log(response)
 }
 
 const onGetAllRegistrationsSuccess = function (data) {
-  console.log('passing through getAllReg in ui.js')
-  console.log(data)
   $(() => {
     // Hide home page
     $('.text-content').hide()
     $('#get-all-registrations').hide()
+    $('#warning-messages').children().hide()
 
     $('#get-all-requests').show()
     // Empty table holder div in case something else is in there
@@ -255,7 +224,6 @@ const onGetAllRegistrationsSuccess = function (data) {
 }
 
 const onGetAllRegistrationsError = function (response) {
-  console.log(response)
 }
 
 const onSignInPlease = function (response) {

@@ -3,7 +3,6 @@
 const app = require('../store.js')
 
 const loginAccount = function (data) {
-  console.log('data in api.js is: ' + data)
   return $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
@@ -28,8 +27,6 @@ const changePassword = function (data) {
 }
 
 const createAccount = function (data) {
-  console.log('passing through api.js')
-  console.log('app.host ' + app.host)
   return $.ajax({
     url: app.host + '/sign-up',
     method: 'POST',
@@ -39,7 +36,8 @@ const createAccount = function (data) {
         'password': data.credentials.password,
         'password_confirmation': data.credentials.password,
         'first_name': data.credentials.first_name,
-        'last_name': data.credentials.last_name
+        'last_name': data.credentials.last_name,
+        'is_admin': false
       }
     }
   })
@@ -56,9 +54,6 @@ const signOut = function () {
 }
 
 const createQuoteRequest = function (data) {
-  console.log('passing quote request through api.js')
-  console.log(data)
-  console.log(app.user.id)
   return $.ajax({
     url: app.host + '/quote_requests',
     method: 'POST',
@@ -81,7 +76,6 @@ const createQuoteRequest = function (data) {
 
 // TODO: find out whether this is grabbing the item's id
 const deleteQuoteRequest = function (id) {
-  console.log('passing through delete quote request api.js')
   return $.ajax({
     url: app.host + '/quote_requests/' + id,
     method: 'DELETE',
@@ -93,8 +87,6 @@ const deleteQuoteRequest = function (id) {
 
 // TODO: find out whether this is grabbing the item's id
 const updateQuoteRequest = function (data) {
-  console.log('passing through update quote request api.js')
-  console.log(data)
   return $.ajax({
     url: app.host + '/quote_requests/' + data.fields.id,
     method: 'PATCH',
@@ -116,7 +108,6 @@ const updateQuoteRequest = function (data) {
 }
 
 const getQuoteRequest = function (data) {
-  console.log('passing through get QR api.js')
   return $.ajax({
     url: app.host + '/quote_requests/' + data.id,
     method: 'GET',
@@ -127,7 +118,6 @@ const getQuoteRequest = function (data) {
 }
 
 const getAllQuoteRequests = function (data) {
-  console.log('passing through getAllQR api.js')
   return $.ajax({
     url: app.host + '/quote_requests',
     method: 'GET',
@@ -138,8 +128,6 @@ const getAllQuoteRequests = function (data) {
 }
 
 const createRegistration = function (data) {
-  console.log('passing through createReg api.js')
-  console.log(app.user.id)
   return $.ajax({
     url: app.host + '/registrations',
     method: 'POST',
@@ -160,8 +148,6 @@ const createRegistration = function (data) {
 }
 
 const deleteRegistration = function (id) {
-  console.log('passing through delete registration api.js')
-  console.log(id)
   return $.ajax({
     url: app.host + '/registrations/' + id,
     method: 'DELETE',
@@ -172,7 +158,6 @@ const deleteRegistration = function (id) {
 }
 
 const updateRegistration = function (data) {
-  console.log('passing through updateReg api.js')
   return $.ajax({
     url: app.host + '/registrations/' + data.fields.id,
     method: 'PATCH',
@@ -193,7 +178,6 @@ const updateRegistration = function (data) {
 }
 
 const getRegistration = function (data) {
-  console.log('passing through getReg api.js')
   return $.ajax({
     url: app.host + '/registrations/' + data.id,
     method: 'GET',
@@ -204,7 +188,6 @@ const getRegistration = function (data) {
 }
 
 const getAllRegistrations = function (data) {
-  console.log('passing through getAllReg api.js')
   return $.ajax({
     url: app.host + '/registrations',
     method: 'GET',
