@@ -8,10 +8,6 @@ const app = require('../store.js')
 const onLogin = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
-  console.log('data.credentials.password is: ' + data.credentials.password)
-  console.log('data.credentials.email is: ' + data.credentials.email)
-
   api.loginAccount(data)
     .then(ui.onLoginSuccess)
     .catch(ui.onLoginError)
@@ -31,8 +27,6 @@ const onCreateAccount = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   // Test that the passwords match
-  console.log('passing through events.js')
-  console.log(data)
   if (data.credentials.password !== data.credentials.password_confirmation) {
     ui.onPasswordMatchError()
   } else {
@@ -52,7 +46,6 @@ const onSignOut = function (event) {
 const onCreateQuoteRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing quote request through events.js')
   if (app.user === undefined) {
     ui.onSignInPlease()
   } else {
@@ -62,15 +55,11 @@ const onCreateQuoteRequest = function (event) {
   }
 }
 
-// TODO: find out if I need to pass data through this
-// TODO: how do I connect this to a specific quote request?
 const onDeleteQuoteRequest = function (event) {
-  console.log('passing delete quote through events.js')
   event.preventDefault()
   // Solution from issue queue:
   // https://git.generalassemb.ly/ga-wdi-boston/full-stack-project/issues/338
   const id = $(this).data('id')
-  console.log('id is:' + id)
   api.deleteQuoteRequest(id)
     .then(ui.onDeleteQuoteRequestSuccess(id))
     .catch(ui.onDeleteQuoteRequestError)
@@ -79,7 +68,6 @@ const onDeleteQuoteRequest = function (event) {
 const onUpdateQuoteRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing Update QR events.js')
   api.updateQuoteRequest(data)
     .then(ui.onUpdateQuoteRequestSuccess(data))
     .catch(ui.onUpdateQuoteRequestError)
@@ -88,7 +76,6 @@ const onUpdateQuoteRequest = function (event) {
 const onGetQuoteRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing Get QR events.js')
   api.getQuoteRequest(data)
     .then(ui.onGetQuoteRequestSuccess)
     .catch(ui.onGetQuoteRequestError)
@@ -97,7 +84,6 @@ const onGetQuoteRequest = function (event) {
 const onGetAllQuoteRequests = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing GetAllQR events.js')
   api.getAllQuoteRequests(data)
     .then(ui.onGetAllQuoteRequestsSuccess)
     .catch(ui.onGetAllQuoteRequestsError)
@@ -106,7 +92,6 @@ const onGetAllQuoteRequests = function (event) {
 const onCreateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing through createReg through events.js')
   if (app.user !== undefined || app.user !== null) {
     ui.onSignInPlease()
   } else {
@@ -117,7 +102,6 @@ const onCreateRegistration = function (event) {
 }
 
 const onDeleteRegistration = function (event) {
-  console.log('passing through deleteReg through events.js')
   event.preventDefault()
   const id = $(this).data('id')
   api.deleteRegistration(id)
@@ -128,8 +112,6 @@ const onDeleteRegistration = function (event) {
 const onUpdateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing through updateReg through events.js')
-  console.log(data)
   api.updateRegistration(data)
     .then(ui.onUpdateRegistrationSuccess(data))
     .catch(ui.onUpdateRegistrationError)
@@ -138,7 +120,6 @@ const onUpdateRegistration = function (event) {
 const onGetRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing GetReg events.js')
   api.getRegistration(data)
     .then(ui.onGetRegistrationSuccess)
     .catch(ui.onGetRegistrationError)
@@ -147,7 +128,6 @@ const onGetRegistration = function (event) {
 const onGetAllRegistrations = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('passing GetAllReg events.js')
   api.getAllRegistrations(data)
     .then(ui.onGetAllRegistrationsSuccess)
     .catch(ui.onGetAllRegistrationsError)
@@ -155,12 +135,13 @@ const onGetAllRegistrations = function (event) {
 
 const onClickHome = function (event) {
   event.preventDefault()
-  console.log(app.user)
   $(() => {
     if (app.user !== undefined && app.user !== null) {
-      $('#get-all-buttons').children().show()
       $('#reveal-change-password').show()
       $('#account-signout').show()
+      if (app.user.is_admin === true) {
+        $('#get-all-buttons').children().show()
+      }
     } else {
       $('#sign-in-reveal').show()
     }
