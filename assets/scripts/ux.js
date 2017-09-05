@@ -3,8 +3,6 @@
 const homePage = function () {
   $('#account-signout').show()
   $('.text-content').show()
-  $('#get-all-requests').show()
-  $('#get-all-registrations').show()
   $('#reveal-change-password').show()
 
   $('#warning-messages').children().hide()
