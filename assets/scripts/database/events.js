@@ -46,7 +46,7 @@ const onSignOut = function (event) {
 const onCreateQuoteRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  if (app.user === undefined) {
+  if (app.user === undefined || app.user === null) {
     ui.onSignInPlease()
   } else {
     api.createQuoteRequest(data)
@@ -92,7 +92,7 @@ const onGetAllQuoteRequests = function (event) {
 const onCreateRegistration = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  if (app.user !== undefined || app.user !== null) {
+  if (app.user === undefined || app.user === null) {
     ui.onSignInPlease()
   } else {
     api.createRegistration(data)
